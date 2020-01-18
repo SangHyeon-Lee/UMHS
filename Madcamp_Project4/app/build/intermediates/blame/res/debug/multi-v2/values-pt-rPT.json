@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Uhms\\UMHS\\Madcamp_Project4\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-pt-rPT\\values-pt-rPT.xml",
+            "outputFile": "C:\\Users\\q\\UMHS\\Madcamp_Project4\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-pt-rPT\\values-pt-rPT.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\q\\.gradle\\caches\\transforms-2\\files-2.1\\6c42e87631037914b8b278b20c040e25\\jetified-play-services-basement-16.1.0\\res\\values-pt-rPT\\values.xml",
+                    "source": "C:\\Users\\q\\.gradle\\caches\\transforms-2\\files-2.1\\6bb34a103a69f96629110afa10d870cc\\jetified-play-services-basement-17.0.0\\res\\values-pt-rPT\\values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",
@@ -21,7 +21,24 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\q\\.gradle\\caches\\transforms-2\\files-2.1\\7eb6326b58a14f489a42a354c4903647\\jetified-facebook-login-4.42.0\\res\\values-pt-rPT\\values-pt-rPT.xml",
+                    "source": "C:\\Users\\q\\.gradle\\caches\\transforms-2\\files-2.1\\503246db64dcbb120c121745b36c75fd\\play-services-base-17.0.0\\res\\values-pt-rPT\\values.xml",
+                    "from": {
+                        "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
+                        "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
+                        "startOffsets": "249,352,547,673,779,1006,1132,1280,1414,1661,1767,1968,2097,2315,2519,2613,2708",
+                        "endColumns": "102,194,125,105,226,125,147,133,246,105,200,128,217,203,93,94,111",
+                        "endOffsets": "351,546,672,778,1005,1131,1279,1413,1660,1766,1967,2096,2314,2518,2612,2707,2819"
+                    },
+                    "to": {
+                        "startLines": "52,53,54,55,56,57,58,59,61,62,63,64,65,66,67,68,69",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "5465,5572,5767,5897,6007,6234,6364,6516,6858,7105,7215,7416,7549,7767,7975,8073,8172",
+                        "endColumns": "106,194,129,109,226,129,151,137,246,109,200,132,217,207,97,98,115",
+                        "endOffsets": "5567,5762,5892,6002,6229,6359,6511,6649,7100,7210,7411,7544,7762,7970,8068,8167,8283"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\q\\.gradle\\caches\\transforms-2\\files-2.1\\0b8dc5f18d5f8cd9511e6c261cbc4b1b\\jetified-facebook-login-4.42.0\\res\\values-pt-rPT\\values-pt-rPT.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -52,23 +69,6 @@
                         "startOffsets": "8373",
                         "endColumns": "100",
                         "endOffsets": "8469"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\q\\.gradle\\caches\\transforms-2\\files-2.1\\cca238d201605340a1cf7f61933d286e\\jetified-play-services-base-16.0.1\\res\\values-pt-rPT\\values.xml",
-                    "from": {
-                        "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
-                        "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
-                        "startOffsets": "249,352,547,673,779,1006,1132,1280,1414,1661,1767,1968,2097,2315,2519,2613,2708",
-                        "endColumns": "102,194,125,105,226,125,147,133,246,105,200,128,217,203,93,94,111",
-                        "endOffsets": "351,546,672,778,1005,1131,1279,1413,1660,1766,1967,2096,2314,2518,2612,2707,2819"
-                    },
-                    "to": {
-                        "startLines": "52,53,54,55,56,57,58,59,61,62,63,64,65,66,67,68,69",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "5465,5572,5767,5897,6007,6234,6364,6516,6858,7105,7215,7416,7549,7767,7975,8073,8172",
-                        "endColumns": "106,194,129,109,226,129,151,137,246,109,200,132,217,207,97,98,115",
-                        "endOffsets": "5567,5762,5892,6002,6229,6359,6511,6649,7100,7210,7411,7544,7762,7970,8068,8167,8283"
                     }
                 },
                 {

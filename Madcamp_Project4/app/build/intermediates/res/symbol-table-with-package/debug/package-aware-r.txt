@@ -66,6 +66,7 @@ attr alertDialogTheme
 attr allowStacking
 attr alpha
 attr alphabeticModifiers
+attr ambientEnabled
 attr arrowHeadLength
 attr arrowShaftLength
 attr autoCompleteTextViewStyle
@@ -116,6 +117,13 @@ attr buttonStyle
 attr buttonStyleSmall
 attr buttonTint
 attr buttonTintMode
+attr cameraBearing
+attr cameraMaxZoomPreference
+attr cameraMinZoomPreference
+attr cameraTargetLat
+attr cameraTargetLng
+attr cameraTilt
+attr cameraZoom
 attr cardBackgroundColor
 attr cardCornerRadius
 attr cardElevation
@@ -314,6 +322,10 @@ attr itemTextColor
 attr keylines
 attr labelVisibilityMode
 attr lastBaselineToBottomHeight
+attr latLngBoundsNorthEastLatitude
+attr latLngBoundsNorthEastLongitude
+attr latLngBoundsSouthWestLatitude
+attr latLngBoundsSouthWestLongitude
 attr layout
 attr layoutManager
 attr layout_anchor
@@ -390,8 +402,10 @@ attr listPreferredItemHeightLarge
 attr listPreferredItemHeightSmall
 attr listPreferredItemPaddingLeft
 attr listPreferredItemPaddingRight
+attr liteMode
 attr logo
 attr logoDescription
+attr mapType
 attr materialButtonStyle
 attr materialCardViewStyle
 attr maxActionInlineWidth
@@ -564,7 +578,16 @@ attr track
 attr trackTint
 attr trackTintMode
 attr ttcIndex
+attr uiCompass
+attr uiMapToolbar
+attr uiRotateGestures
+attr uiScrollGestures
+attr uiScrollGesturesDuringRotateOrZoom
+attr uiTiltGestures
+attr uiZoomControls
+attr uiZoomGestures
 attr useCompatPadding
+attr useViewLifecycle
 attr viewInflaterClass
 attr voiceIcon
 attr windowActionBar
@@ -577,6 +600,7 @@ attr windowFixedWidthMinor
 attr windowMinWidthMajor
 attr windowMinWidthMinor
 attr windowNoTitle
+attr zOrderOnTop
 bool abc_action_bar_embed_tabs
 bool abc_allow_stacked_button_bar
 bool abc_config_actionMenuItemAllCaps
@@ -1118,14 +1142,18 @@ drawable common_google_signin_btn_text_light
 drawable common_google_signin_btn_text_light_focused
 drawable common_google_signin_btn_text_light_normal
 drawable common_google_signin_btn_text_light_normal_background
+drawable compass_2
 drawable design_bottom_navigation_item_background
 drawable design_fab_background
 drawable design_ic_visibility
 drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
+drawable empty_heart_2
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
+drawable heart
+drawable heart_full
 drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable ic_mtrl_chip_checked_black
@@ -1157,6 +1185,7 @@ drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
 drawable plus_icon
 drawable plus_icon_3
+drawable thumb_2
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
 id ALT
@@ -1206,6 +1235,7 @@ id browser_actions_menu_items
 id browser_actions_menu_view
 id button
 id buttonPanel
+id button_addpost
 id cancel_action
 id cancel_button
 id cardview
@@ -1228,6 +1258,7 @@ id com_facebook_smart_instructions_or
 id com_facebook_tooltip_bubble_view_bottom_pointer
 id com_facebook_tooltip_bubble_view_text_body
 id com_facebook_tooltip_bubble_view_top_pointer
+id compass
 id confirmation_code
 id container
 id content
@@ -1261,7 +1292,6 @@ id fill_horizontal
 id fill_vertical
 id filled
 id fixed
-id floatingActionButton7
 id forever
 id ghost_view
 id gone
@@ -1269,13 +1299,14 @@ id group_divider
 id groups
 id home
 id homeAsUp
+id hybrid
 id icon
 id icon_group
 id icon_only
 id ifRoom
 id image
-id imageView
-id imageView2
+id imageButton3
+id imageView3
 id info
 id inline
 id invisible
@@ -1290,6 +1321,7 @@ id line1
 id line3
 id listMode
 id list_item
+id location
 id loginButton
 id masked
 id media_actions
@@ -1313,12 +1345,16 @@ id open_graph
 id outline
 id packed
 id page
+id pager
 id parallax
 id parent
 id parentPanel
 id parent_matrix
 id percent
 id pin
+id post_pic
+id post_text
+id profile_picture
 id progressBar
 id progress_bar
 id progress_circular
@@ -1327,6 +1363,7 @@ id radio
 id right
 id right_icon
 id right_side
+id satellite
 id save_image_matrix
 id save_non_transition_alpha
 id save_scale_type
@@ -1375,12 +1412,17 @@ id tabMode
 id tag_transition_group
 id tag_unhandled_key_event_manager
 id tag_unhandled_key_listeners
+id terrain
 id text
 id text2
 id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
+id textView
+id textView2
 id textView3
+id textView4
+id textView5
 id text_input_password_toggle
 id textinput_counter
 id textinput_error
@@ -1458,10 +1500,12 @@ layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_add__post
 layout activity_camera
+layout activity_comment_adapter
 layout activity_login
 layout activity_main
-layout activity_posts
+layout activity_my_posts
 layout activity_posts_cardview
+layout activity_view_capsule
 layout browser_actions_context_menu_page
 layout browser_actions_context_menu_row
 layout com_facebook_activity_layout
@@ -2198,6 +2242,7 @@ styleable LinearLayoutCompat android_gravity android_orientation android_baselin
 styleable LinearLayoutCompat_Layout android_layout_gravity android_layout_width android_layout_height android_layout_weight
 styleable ListPopupWindow android_dropDownHorizontalOffset android_dropDownVerticalOffset
 styleable LoadingImageView circleCrop imageAspectRatio imageAspectRatioAdjust
+styleable MapAttrs ambientEnabled cameraBearing cameraMaxZoomPreference cameraMinZoomPreference cameraTargetLat cameraTargetLng cameraTilt cameraZoom latLngBoundsNorthEastLatitude latLngBoundsNorthEastLongitude latLngBoundsSouthWestLatitude latLngBoundsSouthWestLongitude liteMode mapType uiCompass uiMapToolbar uiRotateGestures uiScrollGestures uiScrollGesturesDuringRotateOrZoom uiTiltGestures uiZoomControls uiZoomGestures useViewLifecycle zOrderOnTop
 styleable MaterialButton android_insetLeft android_insetRight android_insetTop android_insetBottom backgroundTint backgroundTintMode cornerRadius icon iconGravity iconPadding iconSize iconTint iconTintMode rippleColor strokeColor strokeWidth
 styleable MaterialCardView strokeColor strokeWidth
 styleable MaterialComponentsTheme bottomSheetDialogTheme bottomSheetStyle chipGroupStyle chipStandaloneStyle chipStyle colorAccent colorBackgroundFloating colorPrimary colorPrimaryDark colorSecondary editTextStyle floatingActionButtonStyle materialButtonStyle materialCardViewStyle navigationViewStyle scrimBackground snackbarButtonStyle tabStyle textAppearanceBody1 textAppearanceBody2 textAppearanceButton textAppearanceCaption textAppearanceHeadline1 textAppearanceHeadline2 textAppearanceHeadline3 textAppearanceHeadline4 textAppearanceHeadline5 textAppearanceHeadline6 textAppearanceOverline textAppearanceSubtitle1 textAppearanceSubtitle2 textInputStyle
