@@ -1,58 +1,65 @@
 package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.viewpager.widget.ViewPager;
 
-import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.TextView;
+import android.widget.Gallery;
 
-import com.example.myapplication.facebooklogin.LoginActivity;
-import com.facebook.login.LoginManager;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    private TextView nameTextView;
-    private TextView emailTextView;
-    private TextView uidTextView;
+    MypagerAdapter adapter = new MypagerAdapter(getSupportFragmentManager());
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-//        nameTextView = (TextView) findViewById(R.id.nameTextView);
-//        emailTextView = (TextView) findViewById(R.id.emailTextView);
-//        uidTextView = (TextView) findViewById(R.id.uidTextView);
+        ViewPager pager = (ViewPager) findViewById(R.id.pager);
+        setupViewPager(pager);
+    }
 
-        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+    public void setupViewPager(ViewPager viewPager) {
+        adapter.addFragment(View_Capsule.newInstance(), "View_Capsule");
+        adapter.addFragment(MyPosts.newInstance(), "MyPosts");
 
-        if (user != null) {
-//            String name = user.getDisplayName();
-//            String email = user.getEmail();
-//            Uri photoUrl = user.getPhotoUrl();
-//            String uid = user.getUid();
-//
-//            nameTextView.setText(name);
-//            emailTextView.setText(email);
-//            uidTextView.setText(uid);
-        } else {
-            goLoginScreen();
+        viewPager.setAdapter(adapter);
+    }
+
+    private class MypagerAdapter extends FragmentPagerAdapter {
+
+        private final List<Fragment> mFragmentList = new ArrayList<>();
+        private final List<String> mFragmentTitleList = new ArrayList<>();
+
+        public MypagerAdapter(FragmentManager supportFragmentManager) {
+            super(supportFragmentManager);
+        }
+
+        public void addFragment(Fragment fragment, String title) {
+            mFragmentList.add(fragment);
+            mFragmentTitleList.add(title);
+        }
+
+        public CharSequence getPageTitle(int position) {
+            return mFragmentTitleList.get(position);
+        }
+
+        @Override
+        public Fragment getItem(int position) {
+            return mFragmentList.get(position);
+        }
+
+        @Override
+        public int getCount() {
+            return mFragmentList.size();
         }
     }
 
-    private void goLoginScreen() {
-        Intent intent = new Intent(this, LoginActivity.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-        startActivity(intent);
-    }
-
-    public void logout(View view) {
-        FirebaseAuth.getInstance().signOut();
-        LoginManager.getInstance().logOut();
-        goLoginScreen();
-    }
 }
