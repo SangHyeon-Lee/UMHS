@@ -6,73 +6,111 @@
 6
 7    <uses-sdk
 8        android:minSdkVersion="15"
-8-->C:\Users\q\Madcamp_Project4\app\src\main\AndroidManifest.xml
+8-->C:\Users\q\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml
 9        android:targetSdkVersion="29" />
-9-->C:\Users\q\Madcamp_Project4\app\src\main\AndroidManifest.xml
+9-->C:\Users\q\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml
 10
 11    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-11-->C:\Users\q\Madcamp_Project4\app\src\main\AndroidManifest.xml:5:5-81
-11-->C:\Users\q\Madcamp_Project4\app\src\main\AndroidManifest.xml:5:22-78
+11-->C:\Users\q\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:5:5-81
+11-->C:\Users\q\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:5:22-78
 12    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-12-->C:\Users\q\Madcamp_Project4\app\src\main\AndroidManifest.xml:6:5-80
-12-->C:\Users\q\Madcamp_Project4\app\src\main\AndroidManifest.xml:6:22-77
+12-->C:\Users\q\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:6:5-80
+12-->C:\Users\q\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:6:22-77
 13    <uses-permission android:name="android.permission.STORAGE" />
-13-->C:\Users\q\Madcamp_Project4\app\src\main\AndroidManifest.xml:7:5-66
-13-->C:\Users\q\Madcamp_Project4\app\src\main\AndroidManifest.xml:7:22-63
+13-->C:\Users\q\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:7:5-66
+13-->C:\Users\q\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:7:22-63
 14    <uses-permission android:name="android.permission.CAMERA" />
-14-->C:\Users\q\Madcamp_Project4\app\src\main\AndroidManifest.xml:8:5-65
-14-->C:\Users\q\Madcamp_Project4\app\src\main\AndroidManifest.xml:8:22-62
+14-->C:\Users\q\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:8:5-65
+14-->C:\Users\q\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:8:22-62
 15
-16    <application
-16-->C:\Users\q\Madcamp_Project4\app\src\main\AndroidManifest.xml:13:5-33:19
-17        android:allowBackup="true"
-17-->C:\Users\q\Madcamp_Project4\app\src\main\AndroidManifest.xml:14:9-35
-18        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-18-->[androidx.core:core:1.0.1] C:\Users\q\.gradle\caches\transforms-2\files-2.1\8f8ab13dc8f4e84e14a8bb3d9ac92bc4\core-1.0.1\AndroidManifest.xml:22:18-86
-19        android:debuggable="true"
-20        android:icon="@mipmap/ic_launcher"
-20-->C:\Users\q\Madcamp_Project4\app\src\main\AndroidManifest.xml:15:9-43
-21        android:label="@string/app_name"
-21-->C:\Users\q\Madcamp_Project4\app\src\main\AndroidManifest.xml:16:9-41
-22        android:roundIcon="@mipmap/ic_launcher_round"
-22-->C:\Users\q\Madcamp_Project4\app\src\main\AndroidManifest.xml:17:9-54
-23        android:supportsRtl="true"
-23-->C:\Users\q\Madcamp_Project4\app\src\main\AndroidManifest.xml:18:9-35
-24        android:testOnly="true"
-25        android:theme="@style/AppTheme" >
-25-->C:\Users\q\Madcamp_Project4\app\src\main\AndroidManifest.xml:19:9-40
-26        <activity android:name="com.example.myapplication.MyPosts" />
-26-->C:\Users\q\Madcamp_Project4\app\src\main\AndroidManifest.xml:20:9-54
-26-->C:\Users\q\Madcamp_Project4\app\src\main\AndroidManifest.xml:20:19-42
-27        <activity android:name="com.example.myapplication.View_Capsule" />
-27-->C:\Users\q\Madcamp_Project4\app\src\main\AndroidManifest.xml:21:9-50
-27-->C:\Users\q\Madcamp_Project4\app\src\main\AndroidManifest.xml:21:19-47
-28        <activity android:name="com.example.myapplication.Comment_adapter" />
-28-->C:\Users\q\Madcamp_Project4\app\src\main\AndroidManifest.xml:22:9-53
-28-->C:\Users\q\Madcamp_Project4\app\src\main\AndroidManifest.xml:22:19-50
-29        <activity android:name="com.example.myapplication.Posts_CardView" />
-29-->C:\Users\q\Madcamp_Project4\app\src\main\AndroidManifest.xml:23:9-52
-29-->C:\Users\q\Madcamp_Project4\app\src\main\AndroidManifest.xml:23:19-49
-30        <activity android:name="com.example.myapplication.Add_Post" />
-30-->C:\Users\q\Madcamp_Project4\app\src\main\AndroidManifest.xml:24:9-46
-30-->C:\Users\q\Madcamp_Project4\app\src\main\AndroidManifest.xml:24:19-43
-31        <activity android:name="com.example.myapplication.Camera" />
-31-->C:\Users\q\Madcamp_Project4\app\src\main\AndroidManifest.xml:25:9-44
-31-->C:\Users\q\Madcamp_Project4\app\src\main\AndroidManifest.xml:25:19-41
-32        <activity android:name="com.example.myapplication.MainActivity" >
-32-->C:\Users\q\Madcamp_Project4\app\src\main\AndroidManifest.xml:26:9-32:20
-32-->C:\Users\q\Madcamp_Project4\app\src\main\AndroidManifest.xml:26:19-47
-33            <intent-filter>
-33-->C:\Users\q\Madcamp_Project4\app\src\main\AndroidManifest.xml:27:13-31:29
-34                <action android:name="android.intent.action.MAIN" />
-34-->C:\Users\q\Madcamp_Project4\app\src\main\AndroidManifest.xml:28:17-69
-34-->C:\Users\q\Madcamp_Project4\app\src\main\AndroidManifest.xml:28:25-66
-35
-36                <category android:name="android.intent.category.LAUNCHER" />
-36-->C:\Users\q\Madcamp_Project4\app\src\main\AndroidManifest.xml:30:17-77
-36-->C:\Users\q\Madcamp_Project4\app\src\main\AndroidManifest.xml:30:27-74
-37            </intent-filter>
-38        </activity>
-39    </application>
-40
-41</manifest>
+16    <!-- Include required permissions for Google Maps API to run. -->
+17    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+17-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\q\.gradle\caches\transforms-2\files-2.1\a3d702a77cbfacefb23de82416a0cb1f\play-services-maps-17.0.0\AndroidManifest.xml:23:5-79
+17-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\q\.gradle\caches\transforms-2\files-2.1\a3d702a77cbfacefb23de82416a0cb1f\play-services-maps-17.0.0\AndroidManifest.xml:23:22-76
+18    <uses-permission android:name="android.permission.INTERNET" />
+18-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\q\.gradle\caches\transforms-2\files-2.1\a3d702a77cbfacefb23de82416a0cb1f\play-services-maps-17.0.0\AndroidManifest.xml:24:5-67
+18-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\q\.gradle\caches\transforms-2\files-2.1\a3d702a77cbfacefb23de82416a0cb1f\play-services-maps-17.0.0\AndroidManifest.xml:24:22-64
+19
+20    <uses-feature
+20-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\q\.gradle\caches\transforms-2\files-2.1\a3d702a77cbfacefb23de82416a0cb1f\play-services-maps-17.0.0\AndroidManifest.xml:26:5-28:35
+21        android:glEsVersion="0x00020000"
+21-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\q\.gradle\caches\transforms-2\files-2.1\a3d702a77cbfacefb23de82416a0cb1f\play-services-maps-17.0.0\AndroidManifest.xml:27:9-41
+22        android:required="true" />
+22-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\q\.gradle\caches\transforms-2\files-2.1\a3d702a77cbfacefb23de82416a0cb1f\play-services-maps-17.0.0\AndroidManifest.xml:28:9-32
+23
+24    <application
+24-->C:\Users\q\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:13:5-33:19
+25        android:allowBackup="true"
+25-->C:\Users\q\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:14:9-35
+26        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+26-->[androidx.core:core:1.0.1] C:\Users\q\.gradle\caches\transforms-2\files-2.1\8f8ab13dc8f4e84e14a8bb3d9ac92bc4\core-1.0.1\AndroidManifest.xml:22:18-86
+27        android:debuggable="true"
+28        android:icon="@mipmap/ic_launcher"
+28-->C:\Users\q\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:15:9-43
+29        android:label="@string/app_name"
+29-->C:\Users\q\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:16:9-41
+30        android:roundIcon="@mipmap/ic_launcher_round"
+30-->C:\Users\q\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:17:9-54
+31        android:supportsRtl="true"
+31-->C:\Users\q\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:18:9-35
+32        android:testOnly="true"
+33        android:theme="@style/AppTheme" >
+33-->C:\Users\q\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:19:9-40
+34        <activity android:name="com.example.myapplication.MyPosts" />
+34-->C:\Users\q\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:20:9-54
+34-->C:\Users\q\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:20:19-42
+35        <activity android:name="com.example.myapplication.View_Capsule" />
+35-->C:\Users\q\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:21:9-50
+35-->C:\Users\q\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:21:19-47
+36        <activity android:name="com.example.myapplication.Comment_adapter" />
+36-->C:\Users\q\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:22:9-53
+36-->C:\Users\q\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:22:19-50
+37        <activity android:name="com.example.myapplication.Posts_CardView" />
+37-->C:\Users\q\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:23:9-52
+37-->C:\Users\q\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:23:19-49
+38        <activity android:name="com.example.myapplication.Add_Post" />
+38-->C:\Users\q\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:24:9-46
+38-->C:\Users\q\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:24:19-43
+39        <activity android:name="com.example.myapplication.Camera" />
+39-->C:\Users\q\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:25:9-44
+39-->C:\Users\q\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:25:19-41
+40        <activity android:name="com.example.myapplication.MainActivity" >
+40-->C:\Users\q\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:26:9-32:20
+40-->C:\Users\q\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:26:19-47
+41            <intent-filter>
+41-->C:\Users\q\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:27:13-31:29
+42                <action android:name="android.intent.action.MAIN" />
+42-->C:\Users\q\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:28:17-69
+42-->C:\Users\q\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:28:25-66
+43
+44                <category android:name="android.intent.category.LAUNCHER" />
+44-->C:\Users\q\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:30:17-77
+44-->C:\Users\q\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:30:27-74
+45            </intent-filter>
+46        </activity>
+47        <!-- Needs to be explicitly declared on P+ -->
+48        <uses-library
+48-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\q\.gradle\caches\transforms-2\files-2.1\a3d702a77cbfacefb23de82416a0cb1f\play-services-maps-17.0.0\AndroidManifest.xml:33:9-35:40
+49            android:name="org.apache.http.legacy"
+49-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\q\.gradle\caches\transforms-2\files-2.1\a3d702a77cbfacefb23de82416a0cb1f\play-services-maps-17.0.0\AndroidManifest.xml:34:13-50
+50            android:required="false" />
+50-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\q\.gradle\caches\transforms-2\files-2.1\a3d702a77cbfacefb23de82416a0cb1f\play-services-maps-17.0.0\AndroidManifest.xml:35:13-37
+51
+52        <activity
+52-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\q\.gradle\caches\transforms-2\files-2.1\77c2fc448e2bd0738fd67dce062b1efd\play-services-base-17.0.0\AndroidManifest.xml:23:9-26:75
+53            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+53-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\q\.gradle\caches\transforms-2\files-2.1\77c2fc448e2bd0738fd67dce062b1efd\play-services-base-17.0.0\AndroidManifest.xml:24:13-79
+54            android:exported="false"
+54-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\q\.gradle\caches\transforms-2\files-2.1\77c2fc448e2bd0738fd67dce062b1efd\play-services-base-17.0.0\AndroidManifest.xml:25:13-37
+55            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+55-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\q\.gradle\caches\transforms-2\files-2.1\77c2fc448e2bd0738fd67dce062b1efd\play-services-base-17.0.0\AndroidManifest.xml:26:13-72
+56
+57        <meta-data
+57-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\q\.gradle\caches\transforms-2\files-2.1\fe97d669c15652dbe717816d16a8b279\jetified-play-services-basement-17.0.0\AndroidManifest.xml:23:9-25:69
+58            android:name="com.google.android.gms.version"
+58-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\q\.gradle\caches\transforms-2\files-2.1\fe97d669c15652dbe717816d16a8b279\jetified-play-services-basement-17.0.0\AndroidManifest.xml:24:13-58
+59            android:value="@integer/google_play_services_version" />
+59-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\q\.gradle\caches\transforms-2\files-2.1\fe97d669c15652dbe717816d16a8b279\jetified-play-services-basement-17.0.0\AndroidManifest.xml:25:13-66
+60    </application>
+61
+62</manifest>
