@@ -17,6 +17,7 @@ import android.content.pm.PackageManager;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.LocationManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -41,6 +42,8 @@ public class MainActivity extends AppCompatActivity {
     private TextView emailTextView;
     private TextView uidTextView;
     private GpsTracker gpsTracker;
+    private String name;
+    private Uri photoUrl;
 
     private static final int GPS_ENABLE_REQUEST_CODE = 2001;
     private static final int PERMISSIONS_REQUEST_CODE = 100;
@@ -59,10 +62,10 @@ public class MainActivity extends AppCompatActivity {
 
         // 로그인 설정.
         if (user != null) {
-//            String name = user.getDisplayName();
-//            String email = user.getEmail();
-//            Uri photoUrl = user.getPhotoUrl();
-//            String uid = user.getUid();
+            name = user.getDisplayName();
+            String email = user.getEmail();
+            photoUrl = user.getPhotoUrl();
+            String uid = user.getUid();
 //
 //            nameTextView.setText(name);
 //            emailTextView.setText(email);
