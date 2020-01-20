@@ -20,6 +20,10 @@
         "source": "C:\\Users\\q\\.gradle\\caches\\transforms-2\\files-2.1\\daee6df2c31aab579f82be9a195199ab\\appcompat-1.0.2\\res\\drawable-mdpi-v4\\abc_ic_star_half_black_48dp.png"
     },
     {
+        "merged": "C:\\Users\\q\\UMHS\\Madcamp_Project4\\app\\build\\intermediates\\res\\merged\\debug\\drawable_plus_button.png.flat",
+        "source": "C:\\Users\\q\\UMHS\\Madcamp_Project4\\app\\src\\main\\res\\drawable\\plus_button.png"
+    },
+    {
         "merged": "C:\\Users\\q\\UMHS\\Madcamp_Project4\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_ic_menu_copy_mtrl_am_alpha.png.flat",
         "source": "C:\\Users\\q\\.gradle\\caches\\transforms-2\\files-2.1\\daee6df2c31aab579f82be9a195199ab\\appcompat-1.0.2\\res\\drawable-xxxhdpi-v4\\abc_ic_menu_copy_mtrl_am_alpha.png"
     },
@@ -140,6 +144,10 @@
         "source": "C:\\Users\\q\\.gradle\\caches\\transforms-2\\files-2.1\\503246db64dcbb120c121745b36c75fd\\play-services-base-17.0.0\\res\\drawable\\common_google_signin_btn_icon_light_normal.xml"
     },
     {
+        "merged": "C:\\Users\\q\\UMHS\\Madcamp_Project4\\app\\build\\intermediates\\res\\merged\\debug\\raw_background_new.mp4.flat",
+        "source": "C:\\Users\\q\\UMHS\\Madcamp_Project4\\app\\src\\main\\res\\raw\\background_new.mp4"
+    },
+    {
         "merged": "C:\\Users\\q\\UMHS\\Madcamp_Project4\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_list_divider_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\q\\.gradle\\caches\\transforms-2\\files-2.1\\daee6df2c31aab579f82be9a195199ab\\appcompat-1.0.2\\res\\drawable-xxhdpi-v4\\abc_list_divider_mtrl_alpha.9.png"
     },
@@ -230,6 +238,10 @@
     {
         "merged": "C:\\Users\\q\\UMHS\\Madcamp_Project4\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_notification_bg_normal_pressed.9.png.flat",
         "source": "C:\\Users\\q\\.gradle\\caches\\transforms-2\\files-2.1\\16eb53875ba78320b1fcf5cac2c4c8c7\\core-1.0.1\\res\\drawable-xhdpi-v4\\notification_bg_normal_pressed.9.png"
+    },
+    {
+        "merged": "C:\\Users\\q\\UMHS\\Madcamp_Project4\\app\\build\\intermediates\\res\\merged\\debug\\drawable_blue_dot.png.flat",
+        "source": "C:\\Users\\q\\UMHS\\Madcamp_Project4\\app\\src\\main\\res\\drawable\\blue_dot.png"
     },
     {
         "merged": "C:\\Users\\q\\UMHS\\Madcamp_Project4\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_com_facebook_tooltip_black_background.9.png.flat",
@@ -954,6 +966,10 @@
     {
         "merged": "C:\\Users\\q\\UMHS\\Madcamp_Project4\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_scrubber_control_to_pressed_mtrl_005.png.flat",
         "source": "C:\\Users\\q\\.gradle\\caches\\transforms-2\\files-2.1\\daee6df2c31aab579f82be9a195199ab\\appcompat-1.0.2\\res\\drawable-hdpi-v4\\abc_scrubber_control_to_pressed_mtrl_005.png"
+    },
+    {
+        "merged": "C:\\Users\\q\\UMHS\\Madcamp_Project4\\app\\build\\intermediates\\res\\merged\\debug\\raw_background.mp4.flat",
+        "source": "C:\\Users\\q\\UMHS\\Madcamp_Project4\\app\\src\\main\\res\\raw\\background.mp4"
     },
     {
         "merged": "C:\\Users\\q\\UMHS\\Madcamp_Project4\\app\\build\\intermediates\\res\\merged\\debug\\layout-v16_notification_template_custom_big.xml.flat",
@@ -1904,6 +1920,10 @@
         "source": "C:\\Users\\q\\.gradle\\caches\\transforms-2\\files-2.1\\daee6df2c31aab579f82be9a195199ab\\appcompat-1.0.2\\res\\drawable-xhdpi-v4\\abc_btn_switch_to_on_mtrl_00012.9.png"
     },
     {
+        "merged": "C:\\Users\\q\\UMHS\\Madcamp_Project4\\app\\build\\intermediates\\res\\merged\\debug\\drawable_vistagram_logo.png.flat",
+        "source": "C:\\Users\\q\\UMHS\\Madcamp_Project4\\app\\src\\main\\res\\drawable\\vistagram_logo.png"
+    },
+    {
         "merged": "C:\\Users\\q\\UMHS\\Madcamp_Project4\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_common_google_signin_btn_text_light_normal_background.9.png.flat",
         "source": "C:\\Users\\q\\.gradle\\caches\\transforms-2\\files-2.1\\503246db64dcbb120c121745b36c75fd\\play-services-base-17.0.0\\res\\drawable-hdpi-v4\\common_google_signin_btn_text_light_normal_background.9.png"
     },
@@ -2140,6 +2160,10 @@
         "source": "C:\\Users\\q\\.gradle\\caches\\transforms-2\\files-2.1\\42dfa75dd97f65b6f13ab377026b4c61\\material-1.0.0\\res\\layout\\design_layout_tab_icon.xml"
     },
     {
+        "merged": "C:\\Users\\q\\UMHS\\Madcamp_Project4\\app\\build\\intermediates\\res\\merged\\debug\\raw_background_logo.mp4.flat",
+        "source": "C:\\Users\\q\\UMHS\\Madcamp_Project4\\app\\src\\main\\res\\raw\\background_logo.mp4"
+    },
+    {
         "merged": "C:\\Users\\q\\UMHS\\Madcamp_Project4\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_list_selector_disabled_holo_light.9.png.flat",
         "source": "C:\\Users\\q\\.gradle\\caches\\transforms-2\\files-2.1\\daee6df2c31aab579f82be9a195199ab\\appcompat-1.0.2\\res\\drawable-mdpi-v4\\abc_list_selector_disabled_holo_light.9.png"
     },
@@ -2338,6 +2362,10 @@
     {
         "merged": "C:\\Users\\q\\UMHS\\Madcamp_Project4\\app\\build\\intermediates\\res\\merged\\debug\\anim_abc_tooltip_enter.xml.flat",
         "source": "C:\\Users\\q\\.gradle\\caches\\transforms-2\\files-2.1\\daee6df2c31aab579f82be9a195199ab\\appcompat-1.0.2\\res\\anim\\abc_tooltip_enter.xml"
+    },
+    {
+        "merged": "C:\\Users\\q\\UMHS\\Madcamp_Project4\\app\\build\\intermediates\\res\\merged\\debug\\drawable_dot.png.flat",
+        "source": "C:\\Users\\q\\UMHS\\Madcamp_Project4\\app\\src\\main\\res\\drawable\\dot.png"
     },
     {
         "merged": "C:\\Users\\q\\UMHS\\Madcamp_Project4\\app\\build\\intermediates\\res\\merged\\debug\\anim-v21_design_bottom_sheet_slide_out.xml.flat",

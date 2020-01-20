@@ -33,19 +33,24 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/AppTheme" >
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyD5eqMRDq9zGfW1SypgOQyfxRA--zfWZ78" />
+
         <activity android:name="com.example.myapplication.MyPosts" />
         <activity android:name="com.example.myapplication.View_Capsule" />
         <activity android:name="com.example.myapplication.Comment_adapter" />
         <activity android:name="com.example.myapplication.Posts_CardView" />
         <activity android:name="com.example.myapplication.Add_Post" />
         <activity android:name="com.example.myapplication.Camera" />
-        <activity android:name="com.example.myapplication.facebooklogin.LoginActivity" />
-        <activity android:name="com.example.myapplication.MainActivity" >
+        <activity android:name="com.example.myapplication.facebooklogin.LoginActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name="com.example.myapplication.MainActivity" >
         </activity>
 
         <meta-data
