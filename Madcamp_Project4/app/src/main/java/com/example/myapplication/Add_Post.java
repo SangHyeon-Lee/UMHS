@@ -1,6 +1,7 @@
 package com.example.myapplication;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
@@ -13,6 +14,8 @@ import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
+import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.provider.MediaStore;
@@ -27,6 +30,7 @@ import com.example.myapplication.dbmodels.capsuledatas;
 import com.example.myapplication.dbmodels.capsulelocdatas;
 import com.example.myapplication.dbmodels.comments;
 import com.example.myapplication.dbmodels.rescapdatas;
+import com.example.myapplication.network.NetRetrofit;
 import com.example.myapplication.network.RetrofitService;
 import com.google.gson.JsonObject;
 
@@ -55,6 +59,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.Objects;
 
 
 public class Add_Post extends AppCompatActivity {
@@ -64,7 +69,7 @@ public class Add_Post extends AppCompatActivity {
     TextView name_text;
     TextView date;
     EditText post_text;
-    String capsuleId = "";
+    String capsuleId = "123123";
 
     private GpsTracker gpsTracker;
 
@@ -101,7 +106,19 @@ public class Add_Post extends AppCompatActivity {
         double mylong = gpsTracker.getLongitude();
         double myal = gpsTracker.getAltitude();
 
-        capsuleId = firstUpload("TextofCapsule");
+
+//        capsuleId = firstUpload("TextofCapsule");
+        comments temp2 = new comments("chaewon","getyourcrayon");
+        List<comments> temp = new ArrayList<comments>();
+        temp.add(temp2);
+        capsuledatas uplds = new capsuledatas("Itshouldbechanged", "txt", 1234, temp,0);
+        try{
+            rescapdatas response = uplds.upload();
+            capsuleId = response.get_id();
+        }
+        catch (Exception e){
+
+        }
         secondUpload(capsuleId,mylat,mylong,myal);
 
 
@@ -123,43 +140,44 @@ public class Add_Post extends AppCompatActivity {
         }
     }
 
-    public String firstUpload(String txt){
-        //Capsule post시 서버에 올라가고, Capsuleid를 받아옴.
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(RetrofitService.URL)
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-        RetrofitService retrofitExService = retrofit.create(RetrofitService.class);
-        final String[] capid = new String[1];
-        comments temp2 = new comments("chaewon","getyourcrayon");
-        List<comments> temp = new ArrayList<comments>();
-        temp.add(temp2);
-        retrofitExService.postData(new capsuledatas("Itshouldbechanged", txt, 1234, temp,0)).enqueue(new Callback<rescapdatas>() {
-            @Override
-            public void onResponse(@NonNull Call<rescapdatas> call, @NonNull Response<rescapdatas> response) {
-                if (response.isSuccessful()) {
-                    rescapdatas body = response.body();
-                    if (body != null) {
-                        capid[0] = body.get_id();
-                    }
-                }
-            }
-            @Override
-            public void onFailure(@NonNull Call<rescapdatas> call, @NonNull Throwable t) {
-            }
-        });
-        return capid[0];
-    }
+//    public String firstUpload(String txt){
+//        //Capsule post시 서버에 올라가고, Capsuleid를 받아옴.
+//        Retrofit retrofit = new Retrofit.Builder()
+//                .baseUrl(RetrofitService.URL)
+//                .addConverterFactory(GsonConverterFactory.create())
+//                .build();
+//        RetrofitService retrofitExService = retrofit.create(RetrofitService.class);
+//        final String[] capid = new String[1];
+//        comments temp2 = new comments("chaewon","getyourcrayon");
+//        List<comments> temp = new ArrayList<comments>();
+//        temp.add(temp2);
+//        retrofitExService.postData(new capsuledatas("Itshouldbechanged", txt, 1234, temp,0)).enqueue(new Callback<rescapdatas>() {
+//            @Override
+//            public void onResponse(@NonNull Call<rescapdatas> call, @NonNull Response<rescapdatas> response) {
+//                if (response.isSuccessful()) {
+//                    rescapdatas body = response.body();
+//                    if (body != null) {
+//                        capid[0] = body.get_id();
+//                    }
+//                }
+//            }
+//            @Override
+//            public void onFailure(@NonNull Call<rescapdatas> call, @NonNull Throwable t) {
+//            }
+//        });
+//        return capid[0];
+//    }
+
+
+
+
+
     public void secondUpload(String Cid, double lat, double lon, double al){
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(RetrofitService.URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         RetrofitService retrofitExService = retrofit.create(RetrofitService.class);
-        final String[] capid = new String[1];
-        comments temp2 = new comments("chaewon","getyourcrayon");
-        List<comments> temp = new ArrayList<comments>();
-        temp.add(temp2);
         retrofitExService.postData2(new capsulelocdatas(Cid, lat,lon,al)).enqueue(new Callback<capsulelocdatas>() {
             @Override
             public void onResponse(@NonNull Call<capsulelocdatas> call, @NonNull Response<capsulelocdatas> response) {

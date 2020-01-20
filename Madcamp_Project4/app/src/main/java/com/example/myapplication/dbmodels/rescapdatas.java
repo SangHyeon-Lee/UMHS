@@ -1,8 +1,15 @@
 package com.example.myapplication.dbmodels;
 
+import android.os.AsyncTask;
+
+import com.example.myapplication.network.NetRetrofit;
 import com.google.gson.annotations.SerializedName;
 
+import java.io.IOException;
 import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Response;
 
 public class rescapdatas {
     @SerializedName("Register")
@@ -32,3 +39,4 @@ public class rescapdatas {
     }
 
 }
+
