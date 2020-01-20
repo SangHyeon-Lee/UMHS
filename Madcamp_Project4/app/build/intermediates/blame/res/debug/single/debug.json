@@ -60,6 +60,10 @@
         "source": "C:\\Users\\q\\.gradle\\caches\\transforms-2\\files-2.1\\97efd42224de46c755a49e0671fbcf4b\\jetified-facebook-share-4.42.0\\res\\drawable-xhdpi-v4\\com_facebook_button_send_icon_white.png"
     },
     {
+        "merged": "C:\\umhscompany\\UMHS\\Madcamp_Project4\\app\\build\\intermediates\\res\\merged\\debug\\drawable_dot.png.flat",
+        "source": "C:\\umhscompany\\UMHS\\Madcamp_Project4\\app\\src\\main\\res\\drawable\\dot.png"
+    },
+    {
         "merged": "C:\\umhscompany\\UMHS\\Madcamp_Project4\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_ic_star_black_48dp.png.flat",
         "source": "C:\\Users\\q\\.gradle\\caches\\transforms-2\\files-2.1\\daee6df2c31aab579f82be9a195199ab\\appcompat-1.0.2\\res\\drawable-hdpi-v4\\abc_ic_star_black_48dp.png"
     },
@@ -520,6 +524,10 @@
         "source": "C:\\Users\\q\\.gradle\\caches\\transforms-2\\files-2.1\\503246db64dcbb120c121745b36c75fd\\play-services-base-17.0.0\\res\\drawable\\common_google_signin_btn_icon_dark.xml"
     },
     {
+        "merged": "C:\\umhscompany\\UMHS\\Madcamp_Project4\\app\\build\\intermediates\\res\\merged\\debug\\raw_background.mp4.flat",
+        "source": "C:\\umhscompany\\UMHS\\Madcamp_Project4\\app\\src\\main\\res\\raw\\background.mp4"
+    },
+    {
         "merged": "C:\\umhscompany\\UMHS\\Madcamp_Project4\\app\\build\\intermediates\\res\\merged\\debug\\animator_mtrl_fab_show_motion_spec.xml.flat",
         "source": "C:\\Users\\q\\.gradle\\caches\\transforms-2\\files-2.1\\42dfa75dd97f65b6f13ab377026b4c61\\material-1.0.0\\res\\animator\\mtrl_fab_show_motion_spec.xml"
     },
@@ -926,6 +934,10 @@
     {
         "merged": "C:\\umhscompany\\UMHS\\Madcamp_Project4\\app\\build\\intermediates\\res\\merged\\debug\\drawable_heart_full.png.flat",
         "source": "C:\\umhscompany\\UMHS\\Madcamp_Project4\\app\\src\\main\\res\\drawable\\heart_full.png"
+    },
+    {
+        "merged": "C:\\umhscompany\\UMHS\\Madcamp_Project4\\app\\build\\intermediates\\res\\merged\\debug\\drawable_blue_dot.png.flat",
+        "source": "C:\\umhscompany\\UMHS\\Madcamp_Project4\\app\\src\\main\\res\\drawable\\blue_dot.png"
     },
     {
         "merged": "C:\\umhscompany\\UMHS\\Madcamp_Project4\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_switch_track_mtrl_alpha.9.png.flat",
@@ -1476,8 +1488,20 @@
         "source": "C:\\Users\\q\\.gradle\\caches\\transforms-2\\files-2.1\\42dfa75dd97f65b6f13ab377026b4c61\\material-1.0.0\\res\\layout\\design_navigation_item_separator.xml"
     },
     {
+        "merged": "C:\\umhscompany\\UMHS\\Madcamp_Project4\\app\\build\\intermediates\\res\\merged\\debug\\drawable_vistagram_logo.png.flat",
+        "source": "C:\\umhscompany\\UMHS\\Madcamp_Project4\\app\\src\\main\\res\\drawable\\vistagram_logo.png"
+    },
+    {
+        "merged": "C:\\umhscompany\\UMHS\\Madcamp_Project4\\app\\build\\intermediates\\res\\merged\\debug\\raw_background_logo.mp4.flat",
+        "source": "C:\\umhscompany\\UMHS\\Madcamp_Project4\\app\\src\\main\\res\\raw\\background_logo.mp4"
+    },
+    {
         "merged": "C:\\umhscompany\\UMHS\\Madcamp_Project4\\app\\build\\intermediates\\res\\merged\\debug\\layout_messenger_button_send_blue_small.xml.flat",
         "source": "C:\\Users\\q\\.gradle\\caches\\transforms-2\\files-2.1\\095fcccbb31920d0e8efccb99772a9e9\\facebook-messenger-4.42.0\\res\\layout\\messenger_button_send_blue_small.xml"
+    },
+    {
+        "merged": "C:\\umhscompany\\UMHS\\Madcamp_Project4\\app\\build\\intermediates\\res\\merged\\debug\\drawable_plus_button.png.flat",
+        "source": "C:\\umhscompany\\UMHS\\Madcamp_Project4\\app\\src\\main\\res\\drawable\\plus_button.png"
     },
     {
         "merged": "C:\\umhscompany\\UMHS\\Madcamp_Project4\\app\\build\\intermediates\\res\\merged\\debug\\color_abc_tint_edittext.xml.flat",
@@ -1842,6 +1866,10 @@
     {
         "merged": "C:\\umhscompany\\UMHS\\Madcamp_Project4\\app\\build\\intermediates\\res\\merged\\debug\\drawable_com_facebook_button_background.xml.flat",
         "source": "C:\\Users\\q\\.gradle\\caches\\transforms-2\\files-2.1\\09a5c45b61afaf9fec8e01a14446574c\\jetified-facebook-common-4.42.0\\res\\drawable\\com_facebook_button_background.xml"
+    },
+    {
+        "merged": "C:\\umhscompany\\UMHS\\Madcamp_Project4\\app\\build\\intermediates\\res\\merged\\debug\\raw_background_new.mp4.flat",
+        "source": "C:\\umhscompany\\UMHS\\Madcamp_Project4\\app\\src\\main\\res\\raw\\background_new.mp4"
     },
     {
         "merged": "C:\\umhscompany\\UMHS\\Madcamp_Project4\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_list_selector_holo_light.xml.flat",
