@@ -5765,29 +5765,30 @@ public final class R {
     public static final int textinput_counter=0x7f0800ec;
     public static final int textinput_error=0x7f0800ed;
     public static final int textinput_helper_text=0x7f0800ee;
-    public static final int time=0x7f0800ef;
-    public static final int title=0x7f0800f0;
-    public static final int titleDividerNoCustom=0x7f0800f1;
-    public static final int title_template=0x7f0800f2;
-    public static final int top=0x7f0800f3;
-    public static final int topPanel=0x7f0800f4;
-    public static final int touch_outside=0x7f0800f5;
-    public static final int transition_current_scene=0x7f0800f6;
-    public static final int transition_layout_save=0x7f0800f7;
-    public static final int transition_position=0x7f0800f8;
-    public static final int transition_scene_layoutid_cache=0x7f0800f9;
-    public static final int transition_transform=0x7f0800fa;
-    public static final int uniform=0x7f0800fb;
-    public static final int unknown=0x7f0800fc;
-    public static final int unlabeled=0x7f0800fd;
-    public static final int up=0x7f0800fe;
-    public static final int useLogo=0x7f0800ff;
-    public static final int view_offset_helper=0x7f080100;
-    public static final int visible=0x7f080101;
-    public static final int wide=0x7f080102;
-    public static final int withText=0x7f080103;
-    public static final int wrap=0x7f080104;
-    public static final int wrap_content=0x7f080105;
+    public static final int textview=0x7f0800ef;
+    public static final int time=0x7f0800f0;
+    public static final int title=0x7f0800f1;
+    public static final int titleDividerNoCustom=0x7f0800f2;
+    public static final int title_template=0x7f0800f3;
+    public static final int top=0x7f0800f4;
+    public static final int topPanel=0x7f0800f5;
+    public static final int touch_outside=0x7f0800f6;
+    public static final int transition_current_scene=0x7f0800f7;
+    public static final int transition_layout_save=0x7f0800f8;
+    public static final int transition_position=0x7f0800f9;
+    public static final int transition_scene_layoutid_cache=0x7f0800fa;
+    public static final int transition_transform=0x7f0800fb;
+    public static final int uniform=0x7f0800fc;
+    public static final int unknown=0x7f0800fd;
+    public static final int unlabeled=0x7f0800fe;
+    public static final int up=0x7f0800ff;
+    public static final int useLogo=0x7f080100;
+    public static final int view_offset_helper=0x7f080101;
+    public static final int visible=0x7f080102;
+    public static final int wide=0x7f080103;
+    public static final int withText=0x7f080104;
+    public static final int wrap=0x7f080105;
+    public static final int wrap_content=0x7f080106;
   }
   public static final class integer {
     public static final int abc_config_activityDefaultDur=0x7f090000;
@@ -21325,5 +21326,8 @@ public final class R {
      * @attr name com.example.myapplication:com_facebook_preset_size
      */
     public static final int com_facebook_profile_picture_view_com_facebook_preset_size=1;
+  }
+  public static final class xml {
+    public static final int network_security_config=0x7f100000;
   }
 }
