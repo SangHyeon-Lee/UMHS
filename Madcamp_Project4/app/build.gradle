@@ -1,11 +1,17 @@
 apply plugin: 'com.android.application'
+apply plugin: 'com.google.ar.sceneform.plugin'
 
 android {
     compileSdkVersion 29
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
     buildToolsVersion "29.0.2"
     defaultConfig {
         applicationId "com.example.myapplication"
-        minSdkVersion 15
+        minSdkVersion 24
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
@@ -32,5 +38,46 @@ dependencies {
     implementation 'com.google.firebase:firebase-auth:16.0.5'
     implementation 'com.facebook.android:facebook-android-sdk:[4,5)'
 
+    // Obj - a simple Wavefront OBJ file loader
+    // https://github.com/javagl/Obj
+    implementation 'de.javagl:obj:0.2.1'
+    implementation 'com.google.ar.sceneform:core:1.14.0'
+    implementation 'com.google.ar.sceneform.ux:sceneform-ux:1.6.0'
+    implementation 'com.karumi:dexter:5.0.0'
+    implementation 'com.github.appoly:ARCore-Location:1.2'
+
+
+    implementation 'com.google.ar:core:1.14.0'
+
+
 }
+
+
 apply plugin: "com.google.gms.google-services"
+apply plugin: 'com.google.ar.sceneform.plugin'
+
+
+
+
+
+sceneform.asset('sampledata/jugOfMilk.obj',
+        'default',
+        'sampledata/jugOfMilk.sfa',
+        'src/main/res/raw/jugofmilk')
+
+
+
+sceneform.asset('sampledata/bottle3.obj',
+        'default',
+        'sampledata/bottle3.sfa',
+        'src/main/res/raw/bottle3')
+
+sceneform.asset('sampledata/bottle4.obj',
+        'default',
+        'sampledata/bottle4.sfa',
+        'src/main/res/raw/bottle4')
+
+sceneform.asset('sampledata/bottle5.obj',
+        'default',
+        'sampledata/bottle5.sfa',
+        'src/main/res/raw/bottle5')

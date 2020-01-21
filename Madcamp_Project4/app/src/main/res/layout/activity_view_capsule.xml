@@ -6,6 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".View_Capsule">
 
+
+
     <ImageButton
         android:id="@+id/button_addpost"
         android:layout_width="50dp"
@@ -17,6 +19,12 @@
         android:src="@drawable/plus_icon_3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.ar.sceneform.ArSceneView
+        android:id="@+id/arView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
 
     <ImageView
         android:id="@+id/compass"

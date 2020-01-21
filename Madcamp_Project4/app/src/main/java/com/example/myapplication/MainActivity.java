@@ -32,6 +32,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Locale;
 
@@ -89,15 +90,15 @@ public class MainActivity extends AppCompatActivity {
 //            public void onClick(View arg0)
 //            {
 //
-//                gpsTracker = new GpsTracker(MainActivity.this);
-//
-//                double latitude = gpsTracker.getLatitude();
-//                double longitude = gpsTracker.getLongitude();
-//
-//                String address = getCurrentAddress(latitude, longitude);
-//                textview_address.setText(address);
-//
-//                Toast.makeText(MainActivity.this, "현재위치 \n위도 " + latitude + "\n경도 " + longitude, Toast.LENGTH_LONG).show();
+                gpsTracker = new GpsTracker(MainActivity.this);
+
+                double latitude = gpsTracker.getLatitude();
+                double longitude = gpsTracker.getLongitude();
+
+                String address = getCurrentAddress(latitude, longitude);
+                //textview_address.setText(address);
+
+                Toast.makeText(MainActivity.this, "현재위치 \n위도 " + latitude + "\n경도 " + longitude, Toast.LENGTH_LONG).show();
 //            }
 //        });
     }
@@ -154,6 +155,8 @@ public class MainActivity extends AppCompatActivity {
     public void onRequestPermissionsResult(int permsRequestCode,
                                            @NonNull String[] permissions,
                                            @NonNull int[] grandResults) {
+
+        //WikitudeSDK.getPermissionManager().onRequestPermissionsResult(permsRequestCode, permissions, grandResults);
 
         if ( permsRequestCode == PERMISSIONS_REQUEST_CODE && grandResults.length == REQUIRED_PERMISSIONS.length) {
 
@@ -238,6 +241,24 @@ public class MainActivity extends AppCompatActivity {
             }
 
         }
+
+//        WikitudeSDK.getPermissionManager().checkPermissions(this, new String[]{Manifest.permission.CAMERA}, PermissionManager.WIKITUDE_PERMISSION_REQUEST, new PermissionManager.PermissionManagerCallback() {
+//            @Override
+//            public void permissionsGranted(int requestCode) {
+//                //Class activity = SimpleImageTrackingActivity.class;
+//
+////                switch (categoryName) {
+////                    case "Image Tracking":
+////                        switch (sampleName) {
+////                            case "Simple":
+////                                activity = SimpleImageTrackingActivity.class;
+////                                break;
+//            }
+//
+//            @Override
+//            public void permissionsDenied(String[] deniedPermissions) {
+//                Toast.makeText(MainActivity.this, "The Wikitude SDK needs the following permissions to enable an AR experience: " + Arrays.toString(deniedPermissions), Toast.LENGTH_SHORT).show();
+//            }
 
     }
 
