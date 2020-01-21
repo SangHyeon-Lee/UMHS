@@ -70,15 +70,6 @@ public class View_Capsule extends Fragment implements SensorEventListener, Locat
 
     private ImageView compass;
     private SensorManager mSensorManager;
-    private Sensor mAccelerometer;
-    private Sensor mMagnetometer;
-    private float[] mLastAccelerometer = new float[3];
-    private float[] mLastMagnetometer = new float[3];
-    private boolean mLastAccelerometerSet = false;
-    private boolean mLastMagnetometerSet = false;
-    private float[] mR = new float[9];
-    private float[] mOrientation = new float[3];
-    private float mCurrentDegree = 0f;
 
     List<capsulelocdatas> allcapsules = new ArrayList<capsulelocdatas>();
     private double mylat;
@@ -87,13 +78,12 @@ public class View_Capsule extends Fragment implements SensorEventListener, Locat
 
     private GpsTracker gpsTracker;
 
-    private ImageView dot;
+    private ArrayList<ImageView> dots;
+
     private float[] mGravity = new float[3];
     private float[] mGeomagnetic = new float[3];
     private float azimuth = 0f;
     private float currentAzimuth = 0f;
-    private TextView latitude_text;
-    private TextView longitude_text;
     private LocationManager locationManager;
     private String provider;
     private double[] sampleGPS = {36.374510, 127.364821, 0};
@@ -128,35 +118,26 @@ public class View_Capsule extends Fragment implements SensorEventListener, Locat
             }
         });
 
+        dots = new ArrayList<>();
+        dots.add((ImageView) view.findViewById(R.id.dot0));
+        dots.add((ImageView) view.findViewById(R.id.dot1));
+        dots.add((ImageView) view.findViewById(R.id.dot2));
+        dots.add((ImageView) view.findViewById(R.id.dot3));
+        dots.add((ImageView) view.findViewById(R.id.dot4));
+        dots.add((ImageView) view.findViewById(R.id.dot5));
+        dots.add((ImageView) view.findViewById(R.id.dot6));
+        dots.add((ImageView) view.findViewById(R.id.dot7));
+        dots.add((ImageView) view.findViewById(R.id.dot8));
+        dots.add((ImageView) view.findViewById(R.id.dot9));
 
         mSensorManager = (SensorManager) this.getContext().getSystemService(SENSOR_SERVICE);
-        dot = (ImageView) view.findViewById(R.id.dot);
         compass = (ImageView) view.findViewById(R.id.compass);
-        latitude_text = (TextView) view.findViewById(R.id.latitude);
-        longitude_text = (TextView) view.findViewById(R.id.longitude);
+
         locationManager = (LocationManager) getContext().getSystemService(Context.LOCATION_SERVICE);
 
-
-        Location userLocation = getMyLocation();
-        if (userLocation != null) {
-            double latitude = userLocation.getLatitude();
-            double longitude = userLocation.getLongitude();
-            latitude_text.setText(""+ latitude);
-            longitude_text.setText(""+ longitude);
-            double dis_x = Get_Distance(latitude, sampleGPS[1], latitude, longitude);
-            double dis_y = Get_Distance(sampleGPS[0], longitude, latitude, longitude);
-            double dis = Get_Distance(sampleGPS[0], sampleGPS[1], latitude, longitude);
-
-            if (sampleGPS[0]>latitude){
-                dis_y = -dis_y;
-            }
-            if (sampleGPS[1]<longitude){
-                dis_x = -dis_x;
-            }
-            dot.setX( 138f + (float) dis_x*107/200);
-            dot.setY( 143f + (float) dis_y*107/200);
+        for (int i =0; i<dots.size(); i++){
+            dots.get(i).setVisibility(View.INVISIBLE);
         }
-
 
         //현재 위치가 뜨게 만들고
         //TODO : 모든 캡슐의 위치를 받아와야 합니다.(Retrofit를 써보도록 합시다.) (1번의 통신) Capsulelocdata
@@ -172,51 +153,33 @@ public class View_Capsule extends Fragment implements SensorEventListener, Locat
         //모든 캡슐들을  appcapsules라는 변수안에 집어넣음.
         loadAllCapsules();
 
+        for (int j = 0; j< allcapsules.size(); j++){
+            double cap_lat = allcapsules.get(j).getLatitude();
+            double cap_long = allcapsules.get(j).getLongtitude();
 
+            double dis_x = Get_Distance(mylat, cap_long, mylat, mylong);
+            double dis_y = Get_Distance(cap_lat, mylong, mylat, mylong);
+            double dis = Get_Distance(cap_lat, cap_long, mylat, mylong);
 
+            if (dis>200){
+                continue;
+            }
+
+            if (sampleGPS[0]>mylat){
+                dis_y = -dis_y;
+            }
+            if (sampleGPS[1]<mylong){
+                dis_x = -dis_x;
+            }
+            dots.get(j).setVisibility(View.VISIBLE);
+            dots.get(j).setX( 138f + (float) dis_x*107/200);
+            dots.get(j).setY( 143f + (float) dis_y*107/200);
+        }
 
         return view;
     }
 
 
-    private Location getMyLocation() {
-        Location currentLocation = null;
-        // Register the listener with the Location Manager to receive location updates
-
-        currentLocation = getLastKnownLocation();
-        if (currentLocation != null) {
-            double lng = currentLocation.getLongitude();
-            double lat = currentLocation.getLatitude();
-        }
-
-        return currentLocation;
-    }
-
-    private Location getLastKnownLocation() {
-        List<String> providers = locationManager.getProviders(true);
-        Location bestLocation = null;
-        for (String provider : providers) {
-            if (checkSelfPermission(getContext(),Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && checkSelfPermission(getContext(),Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-                // TODO: Consider calling
-                //    Activity#requestPermissions
-                // here to request the missing permissions, and then overriding
-                //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-                //                                          int[] grantResults)
-                // to handle the case where the user grants the permission. See the documentation
-                // for Activity#requestPermissions for more details.
-
-            }
-            Location l = locationManager.getLastKnownLocation(provider);
-            if (l == null) {
-                continue;
-            }
-            if (bestLocation == null || l.getAccuracy() < bestLocation.getAccuracy()) {
-                // Found best last known location: %s", l);
-                bestLocation = l;
-            }
-        }
-        return bestLocation;
-    }
 
     @Override
     public void onResume(){
@@ -354,22 +317,31 @@ public class View_Capsule extends Fragment implements SensorEventListener, Locat
 
     @Override
     public void onLocationChanged(Location location) {
-        double longitude = location.getLongitude();
-        double latitude = location.getLatitude();
-        double altitude = location.getAltitude();
+        for (int i =0; i<dots.size(); i++){
+            dots.get(i).setVisibility(View.INVISIBLE);
+        }
+        for (int j = 0; j< allcapsules.size(); j++){
+            double cap_lat = allcapsules.get(j).getLatitude();
+            double cap_long = allcapsules.get(j).getLongtitude();
 
-        latitude_text.setText((int) latitude);
-        longitude_text.setText((int) longitude);
-        double dis_x = Get_Distance(latitude, sampleGPS[1], latitude, longitude);
-        double dis_y = Get_Distance(sampleGPS[0], longitude, latitude, longitude);
-        if (sampleGPS[0]>latitude){
-            dis_y = -dis_y;
+            double dis_x = Get_Distance(mylat, cap_long, mylat, mylong);
+            double dis_y = Get_Distance(cap_lat, mylong, mylat, mylong);
+            double dis = Get_Distance(cap_lat, cap_long, mylat, mylong);
+
+            if (dis>200){
+                continue;
+            }
+
+            if (sampleGPS[0]>mylat){
+                dis_y = -dis_y;
+            }
+            if (sampleGPS[1]<mylong){
+                dis_x = -dis_x;
+            }
+            dots.get(j).setVisibility(View.VISIBLE);
+            dots.get(j).setX( 138f + (float) dis_x*107/200);
+            dots.get(j).setY( 143f + (float) dis_y*107/200);
         }
-        if (sampleGPS[1]<longitude){
-            dis_x = -dis_x;
-        }
-        dot.setX( 138f + (float) dis_x*107/200);
-        dot.setY( 143f + (float) dis_y*107/200);
     }
 
     @Override
