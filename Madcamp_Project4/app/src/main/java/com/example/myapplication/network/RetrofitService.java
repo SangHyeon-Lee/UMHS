@@ -18,6 +18,7 @@ import javax.xml.transform.Result;
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
 import okhttp3.Response;
+import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -27,15 +28,20 @@ import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.Multipart;
 import retrofit2.http.POST;
+import retrofit2.http.PUT;
 import retrofit2.http.Part;
 import retrofit2.http.PartMap;
 import retrofit2.http.Path;
+import retrofit2.http.Url;
 
 public interface RetrofitService {
     String URL = "http://192.249.19.252:3480/";
 
     @POST("capsuledatas")
     Call<rescapdatas> postData(@Body capsuledatas param);
+
+    @POST("capsuledatas/view")
+    Call<capsuledatas> getCaps(@Body capsulelocdatas param);
 
     @GET("capsulelocdatas")
     Call<List<capsulelocdatas>> getCapsules();
@@ -48,8 +54,15 @@ public interface RetrofitService {
 
     @Multipart
     @POST("index/post/img")
-    Call<Result> uploadImages(@Part MultipartBody.Part files);
+    Call<ResponseBody> uploadImages(@Part MultipartBody.Part files);
 
+    @PUT
+    Call<Void> updateImage(@Url String url, @Body RequestBody image);
+
+    public static final Retrofit retrofit = new Retrofit.Builder()
+            .baseUrl(RetrofitService.URL)
+            .addConverterFactory(GsonConverterFactory.create())
+            .build();
 }
 
 

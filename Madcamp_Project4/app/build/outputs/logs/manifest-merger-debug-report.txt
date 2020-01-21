@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:2:1-46:12
-INJECTED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:2:1-46:12
-INJECTED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:2:1-46:12
-INJECTED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:2:1-46:12
+ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:2:1-75:12
+INJECTED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:2:1-75:12
+INJECTED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:2:1-75:12
+INJECTED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:2:1-75:12
 MERGED from [com.google.android.material:material:1.0.0] C:\Users\q\.gradle\caches\transforms-2\files-2.1\42dfa75dd97f65b6f13ab377026b4c61\material-1.0.0\AndroidManifest.xml:17:1-24:12
 MERGED from [com.facebook.android:facebook-android-sdk:4.42.0] C:\Users\q\.gradle\caches\transforms-2\files-2.1\b5047e50cf18ba9de45f02e8093e6b70\facebook-android-sdk-4.42.0\AndroidManifest.xml:21:1-31:12
 MERGED from [com.facebook.android:facebook-login:4.42.0] C:\Users\q\.gradle\caches\transforms-2\files-2.1\7eb6326b58a14f489a42a354c4903647\jetified-facebook-login-4.42.0\AndroidManifest.xml:21:1-31:12
@@ -58,20 +58,20 @@ MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\q\.gradle\cac
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] C:\Users\q\.gradle\caches\transforms-2\files-2.1\bc54237dd241608a60f3e5f1afb0cd23\lifecycle-livedata-core-2.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\q\.gradle\caches\transforms-2\files-2.1\71b619f01309f419ed6b9a79fb62df67\core-runtime-2.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.firebase:firebase-database-collection:16.0.1] C:\Users\q\.gradle\caches\transforms-2\files-2.1\a1f8c2d07d4b5dc337fdd2085806786c\firebase-database-collection-16.0.1\AndroidManifest.xml:2:1-7:12
-INJECTED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:2:1-46:12
-INJECTED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:2:1-46:12
-INJECTED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:2:1-46:12
+INJECTED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:2:1-75:12
+INJECTED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:2:1-75:12
+INJECTED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:2:1-75:12
 	package
 		ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:3:5-40
 		INJECTED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml
 		INJECTED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml
-		ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:2:1-46:12
+		ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:2:1-75:12
 		INJECTED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml
-		ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:2:1-46:12
+		ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:2:1-75:12
 		INJECTED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:2:11-69
@@ -91,8 +91,32 @@ uses-permission#android.permission.CAMERA
 ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:8:5-65
 	android:name
 		ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:8:22-62
+uses-permission#android.permission.INTERNET
+ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:9:5-67
+MERGED from [com.google.android.gms:play-services-maps:17.0.0] C:\Users\q\.gradle\caches\transforms-2\files-2.1\782ac9e8c2d2502341598bbdb19278cf\play-services-maps-17.0.0\AndroidManifest.xml:24:5-67
+MERGED from [com.google.android.gms:play-services-maps:17.0.0] C:\Users\q\.gradle\caches\transforms-2\files-2.1\782ac9e8c2d2502341598bbdb19278cf\play-services-maps-17.0.0\AndroidManifest.xml:24:5-67
+MERGED from [com.google.firebase:firebase-database:16.0.5] C:\Users\q\.gradle\caches\transforms-2\files-2.1\1bcf5267056cf73d81df3b01ddbba94b\jetified-firebase-database-16.0.5\AndroidManifest.xml:23:5-67
+MERGED from [com.google.firebase:firebase-database:16.0.5] C:\Users\q\.gradle\caches\transforms-2\files-2.1\1bcf5267056cf73d81df3b01ddbba94b\jetified-firebase-database-16.0.5\AndroidManifest.xml:23:5-67
+	android:name
+		ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:9:22-64
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:10:5-79
+MERGED from [com.google.android.gms:play-services-maps:17.0.0] C:\Users\q\.gradle\caches\transforms-2\files-2.1\782ac9e8c2d2502341598bbdb19278cf\play-services-maps-17.0.0\AndroidManifest.xml:23:5-79
+MERGED from [com.google.android.gms:play-services-maps:17.0.0] C:\Users\q\.gradle\caches\transforms-2\files-2.1\782ac9e8c2d2502341598bbdb19278cf\play-services-maps-17.0.0\AndroidManifest.xml:23:5-79
+MERGED from [com.google.firebase:firebase-database:16.0.5] C:\Users\q\.gradle\caches\transforms-2\files-2.1\1bcf5267056cf73d81df3b01ddbba94b\jetified-firebase-database-16.0.5\AndroidManifest.xml:22:5-79
+MERGED from [com.google.firebase:firebase-database:16.0.5] C:\Users\q\.gradle\caches\transforms-2\files-2.1\1bcf5267056cf73d81df3b01ddbba94b\jetified-firebase-database-16.0.5\AndroidManifest.xml:22:5-79
+	android:name
+		ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:10:22-76
+uses-permission#android.permission.ACCESS_FINE_LOCATION
+ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:11:5-79
+	android:name
+		ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:11:22-76
+uses-permission#android.permission.ACCESS_COARSE_LOCATION
+ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:12:5-81
+	android:name
+		ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:12:22-78
 application
-ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:13:5-41:19
+ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:14:5-73:19
 MERGED from [com.google.android.material:material:1.0.0] C:\Users\q\.gradle\caches\transforms-2\files-2.1\42dfa75dd97f65b6f13ab377026b4c61\material-1.0.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.0.0] C:\Users\q\.gradle\caches\transforms-2\files-2.1\42dfa75dd97f65b6f13ab377026b4c61\material-1.0.0\AndroidManifest.xml:22:5-20
 MERGED from [com.facebook.android:facebook-android-sdk:4.42.0] C:\Users\q\.gradle\caches\transforms-2\files-2.1\b5047e50cf18ba9de45f02e8093e6b70\facebook-android-sdk-4.42.0\AndroidManifest.xml:28:5-29:19
@@ -138,135 +162,131 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] C:\Users\q\
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.0.1] C:\Users\q\.gradle\caches\transforms-2\files-2.1\16eb53875ba78320b1fcf5cac2c4c8c7\core-1.0.1\AndroidManifest.xml:22:18-86
 	android:supportsRtl
-		ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:19:9-35
+		ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:20:9-35
 	android:label
 		ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:17:9-41
 	android:roundIcon
-		ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:18:9-54
+		ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:19:9-54
 	android:icon
 		ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:16:9-43
 	android:allowBackup
 		ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:15:9-35
 	android:theme
-		ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:20:9-40
+		ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:21:9-40
 	android:networkSecurityConfig
-		ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:14:9-69
+		ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:18:9-69
+activity#com.example.myapplication.Mycapsule_adapter
+ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:22:9-64
+	android:name
+		ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:22:19-52
+provider#androidx.core.content.FileProvider
+ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:23:9-32:20
+	android:grantUriPermissions
+		ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:27:13-47
+	android:authorities
+		ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:25:13-60
+	android:exported
+		ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:26:13-37
+	android:name
+		ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:24:13-62
+meta-data#android.support.FILE_PROVIDER_PATHS
+ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:29:13-31:54
+	android:resource
+		ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:31:17-51
+	android:name
+		ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:30:17-67
 meta-data#com.google.android.geo.API_KEY
-ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:21:9-23:71
+ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:33:9-35:71
 	android:value
-		ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:23:13-68
+		ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:35:13-68
 	android:name
-		ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:22:13-58
+		ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:34:13-58
 activity#com.example.myapplication.MyPosts
-ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:24:9-54
+ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:37:9-45
 	android:name
-		ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:24:19-42
+		ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:37:19-42
 activity#com.example.myapplication.View_Capsule
-ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:25:9-50
+ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:38:9-50
 	android:name
-		ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:25:19-47
+		ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:38:19-47
 activity#com.example.myapplication.Comment_adapter
-ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:26:9-53
+ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:39:9-53
 	android:name
-		ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:26:19-50
+		ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:39:19-50
 activity#com.example.myapplication.Posts_CardView
-ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:27:9-52
+ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:40:9-52
 	android:name
-		ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:27:19-49
+		ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:40:19-49
 activity#com.example.myapplication.Add_Post
-ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:28:9-46
+ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:41:9-46
 	android:name
-		ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:28:19-43
+		ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:41:19-43
 activity#com.example.myapplication.Camera
-ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:29:9-44
+ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:42:9-44
 	android:name
-		ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:29:19-41
+		ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:42:19-41
 activity#com.example.myapplication.facebooklogin.LoginActivity
-ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:30:9-36:20
+ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:43:9-49:20
 	android:name
-		ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:30:19-87
+		ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:43:19-62
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:31:13-35:29
+ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:44:13-48:29
 action#android.intent.action.MAIN
-ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:32:17-69
+ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:45:17-69
 	android:name
-		ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:32:25-66
+		ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:45:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:34:17-77
+ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:47:17-77
 	android:name
-		ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:34:27-74
+		ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:47:27-74
 activity#com.example.myapplication.MainActivity
-ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:37:9-39:20
+ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:51:9-59
 	android:name
-		ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:37:19-47
+		ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:51:19-47
 meta-data#com.facebook.sdk.ApplicationId
-ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:40:9-107
+ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:53:9-55:55
 	android:value
-		ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:40:66-105
+		ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:55:13-52
 	android:name
-		ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:40:20-65
+		ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:54:13-58
 activity#com.facebook.FacebookActivity
-ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:40:108-283
+ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:57:9-60:48
 MERGED from [com.facebook.android:facebook-common:4.42.0] C:\Users\q\.gradle\caches\transforms-2\files-2.1\09a5c45b61afaf9fec8e01a14446574c\jetified-facebook-common-4.42.0\AndroidManifest.xml:29:9-32:66
 MERGED from [com.facebook.android:facebook-common:4.42.0] C:\Users\q\.gradle\caches\transforms-2\files-2.1\09a5c45b61afaf9fec8e01a14446574c\jetified-facebook-common-4.42.0\AndroidManifest.xml:29:9-32:66
 	android:label
-		ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:40:248-280
+		ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:60:13-45
 	android:configChanges
-		ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:40:163-247
+		ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:59:13-96
 	android:theme
 		ADDED from [com.facebook.android:facebook-common:4.42.0] C:\Users\q\.gradle\caches\transforms-2\files-2.1\09a5c45b61afaf9fec8e01a14446574c\jetified-facebook-common-4.42.0\AndroidManifest.xml:32:13-63
 	android:name
-		ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:40:118-162
+		ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:58:13-57
 activity#com.facebook.CustomTabActivity
-ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:40:284-643
+ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:61:9-72:20
 MERGED from [com.facebook.android:facebook-common:4.42.0] C:\Users\q\.gradle\caches\transforms-2\files-2.1\09a5c45b61afaf9fec8e01a14446574c\jetified-facebook-common-4.42.0\AndroidManifest.xml:34:9-67
 MERGED from [com.facebook.android:facebook-common:4.42.0] C:\Users\q\.gradle\caches\transforms-2\files-2.1\09a5c45b61afaf9fec8e01a14446574c\jetified-facebook-common-4.42.0\AndroidManifest.xml:34:9-67
 	android:exported
-		ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:40:340-363
+		ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:63:13-36
 	android:name
-		ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:40:294-339
+		ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:62:13-58
 intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.BROWSABLE+category:name:android.intent.category.DEFAULT+data:scheme:@string/fb_login_protocol_scheme
-ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:40:365-631
+ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:64:13-71:29
 action#android.intent.action.VIEW
-ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:40:381-433
+ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:65:17-69
 	android:name
-		ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:40:389-430
+		ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:65:25-66
 category#android.intent.category.DEFAULT
-ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:40:434-493
+ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:67:17-76
 	android:name
-		ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:40:444-490
+		ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:67:27-73
 category#android.intent.category.BROWSABLE
-ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:40:494-555
+ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:68:17-78
 	android:name
-		ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:40:504-552
+		ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:68:27-75
 data
-ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:40:556-614
+ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:70:17-75
 	android:scheme
-		ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:40:562-611
-uses-permission#android.permission.INTERNET
-ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:42:5-66
-MERGED from [com.google.android.gms:play-services-maps:17.0.0] C:\Users\q\.gradle\caches\transforms-2\files-2.1\782ac9e8c2d2502341598bbdb19278cf\play-services-maps-17.0.0\AndroidManifest.xml:24:5-67
-MERGED from [com.google.android.gms:play-services-maps:17.0.0] C:\Users\q\.gradle\caches\transforms-2\files-2.1\782ac9e8c2d2502341598bbdb19278cf\play-services-maps-17.0.0\AndroidManifest.xml:24:5-67
-MERGED from [com.google.firebase:firebase-database:16.0.5] C:\Users\q\.gradle\caches\transforms-2\files-2.1\1bcf5267056cf73d81df3b01ddbba94b\jetified-firebase-database-16.0.5\AndroidManifest.xml:23:5-67
-MERGED from [com.google.firebase:firebase-database:16.0.5] C:\Users\q\.gradle\caches\transforms-2\files-2.1\1bcf5267056cf73d81df3b01ddbba94b\jetified-firebase-database-16.0.5\AndroidManifest.xml:23:5-67
-	android:name
-		ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:42:22-64
-uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:43:5-79
-MERGED from [com.google.android.gms:play-services-maps:17.0.0] C:\Users\q\.gradle\caches\transforms-2\files-2.1\782ac9e8c2d2502341598bbdb19278cf\play-services-maps-17.0.0\AndroidManifest.xml:23:5-79
-MERGED from [com.google.android.gms:play-services-maps:17.0.0] C:\Users\q\.gradle\caches\transforms-2\files-2.1\782ac9e8c2d2502341598bbdb19278cf\play-services-maps-17.0.0\AndroidManifest.xml:23:5-79
-MERGED from [com.google.firebase:firebase-database:16.0.5] C:\Users\q\.gradle\caches\transforms-2\files-2.1\1bcf5267056cf73d81df3b01ddbba94b\jetified-firebase-database-16.0.5\AndroidManifest.xml:22:5-79
-MERGED from [com.google.firebase:firebase-database:16.0.5] C:\Users\q\.gradle\caches\transforms-2\files-2.1\1bcf5267056cf73d81df3b01ddbba94b\jetified-firebase-database-16.0.5\AndroidManifest.xml:22:5-79
-	android:name
-		ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:43:22-76
-uses-permission#android.permission.ACCESS_FINE_LOCATION
-ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:44:5-79
-	android:name
-		ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:44:22-76
-uses-permission#android.permission.ACCESS_COARSE_LOCATION
-ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:45:5-80
-	android:name
-		ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:45:22-78
+		ADDED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml:70:23-72
 uses-sdk
 INJECTED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\umhscompany\UMHS\Madcamp_Project4\app\src\main\AndroidManifest.xml

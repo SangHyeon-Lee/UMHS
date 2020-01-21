@@ -30,7 +30,7 @@
 
                 <ImageView
                     android:id="@+id/profile_picture"
-                    android:layout_width="wrap_content"
+                    android:layout_width="25dp"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
                     android:layout_weight="1"
@@ -43,17 +43,11 @@
                     android:id="@+id/name"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_weight="2"
+                    android:layout_weight="4"
+                    android:gravity="center_vertical"
                     android:text="TextView"
                     android:textSize="20sp" />
 
-                <TextView
-                    android:id="@+id/date"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_weight="3"
-                    android:text="date"
-                    android:textSize="20sp" />
             </LinearLayout>
 
             <EditText
@@ -73,7 +67,7 @@
                 tools:srcCompat="@tools:sample/backgrounds/scenic[1]" />
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/post_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="#00FFFFFF"

@@ -374,11 +374,11 @@
                 {
                     "source": "C:\\umhscompany\\UMHS\\Madcamp_Project4\\app\\src\\main\\res\\values\\strings.xml",
                     "from": {
-                        "startLines": "1,4,5,2,2,7,6,3",
-                        "startColumns": "4,4,4,4,60,4,4,4",
-                        "startOffsets": "17,242,291,70,126,380,339,198",
-                        "endColumns": "51,47,46,59,126,62,39,42",
-                        "endOffsets": "64,285,333,125,192,438,374,236"
+                        "startLines": "1,5,6,2,3,8,7,4",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "17,247,296,70,131,385,344,203",
+                        "endColumns": "51,47,46,59,70,62,39,42",
+                        "endOffsets": "64,290,338,125,197,443,379,241"
                     },
                     "to": {
                         "startLines": "620,623,668,671,672,674,681,692",
