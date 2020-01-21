@@ -1,10 +1,16 @@
 package com.example.myapplication.facebooklogin;
 
+import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.util.AttributeSet;
+import android.view.Display;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.ProgressBar;
 import android.widget.Toast;
+import android.widget.VideoView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -35,21 +41,26 @@ public class LoginActivity extends AppCompatActivity {
     private FirebaseAuth firebaseAuth;
     private FirebaseAuth.AuthStateListener firebaseAuthListener;
 
+    private VideoView background;
     private ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_login);
+        background = (VideoView) findViewById(R.id.background_video);
+        Uri uri = Uri.parse("android.resource://"+getPackageName()+"/"+R.raw.background_logo);
+        background.setVideoURI(uri);
+        background.start();
 
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
 
         callbackManager = CallbackManager.Factory.create();
 
         loginButton = (LoginButton) findViewById(R.id.loginButton);
-
         loginButton.setReadPermissions(Arrays.asList("email"));
-
         loginButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
             @Override
             public void onSuccess(LoginResult loginResult) {
@@ -78,6 +89,7 @@ public class LoginActivity extends AppCompatActivity {
             }
         };
     }
+
 
     private void handleFacebookAccessToken(AccessToken accessToken) {
         progressBar.setVisibility(View.VISIBLE);
@@ -118,5 +130,11 @@ public class LoginActivity extends AppCompatActivity {
     protected void onStop() {
         super.onStop();
         firebaseAuth.removeAuthStateListener(firebaseAuthListener);
+    }
+    @Override
+    protected void onResume() {
+        super.onResume();
+        // to restart the video after coming from other activity like Sing up
+        background.start();
     }
 }

@@ -1113,6 +1113,7 @@ drawable abc_vector_test
 drawable annotation
 drawable avd_hide_password
 drawable avd_show_password
+drawable blue_dot
 drawable com_facebook_auth_dialog_background
 drawable com_facebook_auth_dialog_cancel_background
 drawable com_facebook_auth_dialog_header_background
@@ -1167,6 +1168,7 @@ drawable design_ic_visibility
 drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
+drawable dot
 drawable empty_heart_2
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
@@ -1201,6 +1203,7 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable plus_button
 drawable plus_icon
 drawable plus_icon_3
 drawable sceneform_hand_phone
@@ -1208,6 +1211,7 @@ drawable sceneform_plane
 drawable thumb_2
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
+drawable vistagram_logo
 id ALT
 id CTRL
 id FUNCTION
@@ -1238,6 +1242,7 @@ id action_text
 id actions
 id activity_chooser_view_content
 id add
+id add_comment
 id adjust_height
 id adjust_width
 id alertTitle
@@ -1247,6 +1252,7 @@ id arView
 id async
 id auto
 id automatic
+id background_video
 id barrier
 id beginning
 id blocking
@@ -1282,6 +1288,11 @@ id com_facebook_smart_instructions_or
 id com_facebook_tooltip_bubble_view_bottom_pointer
 id com_facebook_tooltip_bubble_view_text_body
 id com_facebook_tooltip_bubble_view_top_pointer
+id comment
+id comment_name
+id comment_post
+id comment_profile
+id comment_text
 id compass
 id confirmation_code
 id container
@@ -1303,6 +1314,16 @@ id dimensions
 id direct
 id disableHome
 id display_always
+id dot0
+id dot1
+id dot2
+id dot3
+id dot4
+id dot5
+id dot6
+id dot7
+id dot8
+id dot9
 id edit_query
 id end
 id end_padder
@@ -1329,8 +1350,6 @@ id icon_group
 id icon_only
 id ifRoom
 id image
-id imageButton3
-id imageView3
 id info
 id inline
 id invisible
@@ -1341,11 +1360,12 @@ id large
 id largeLabel
 id left
 id light
+id like_button
+id like_text
 id line1
 id line3
 id listMode
 id list_item
-id location
 id loginButton
 id masked
 id media_actions
@@ -1376,6 +1396,7 @@ id parentPanel
 id parent_matrix
 id percent
 id pin
+id post_button
 id post_pic
 id post_text
 id profile_picture
@@ -1416,6 +1437,7 @@ id shortcut
 id showCustom
 id showHome
 id showTitle
+id show_capsule
 id small
 id smallLabel
 id snackbar_action
@@ -1445,11 +1467,6 @@ id text2
 id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
-id textView
-id textView2
-id textView3
-id textView4
-id textView5
 id text_input_password_toggle
 id textinput_counter
 id textinput_error
@@ -1532,6 +1549,7 @@ layout activity_comment_adapter
 layout activity_login
 layout activity_main
 layout activity_my_posts
+layout activity_mycapsule_adapter
 layout activity_posts_cardview
 layout activity_view_capsule
 layout browser_actions_context_menu_page
@@ -1586,6 +1604,9 @@ layout select_dialog_singlechoice_material
 layout support_simple_spinner_dropdown_item
 mipmap ic_launcher
 mipmap ic_launcher_round
+raw background
+raw background_logo
+raw background_new
 raw bottle3
 raw bottle4
 raw bottle5
@@ -2372,3 +2393,5 @@ styleable ViewStubCompat android_id android_layout android_inflatedId
 styleable com_facebook_like_view com_facebook_auxiliary_view_position com_facebook_foreground_color com_facebook_horizontal_alignment com_facebook_object_id com_facebook_object_type com_facebook_style
 styleable com_facebook_login_view com_facebook_confirm_logout com_facebook_login_text com_facebook_logout_text com_facebook_tooltip_mode
 styleable com_facebook_profile_picture_view com_facebook_is_cropped com_facebook_preset_size
+xml file_paths
+xml network_security_config

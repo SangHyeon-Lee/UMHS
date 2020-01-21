@@ -49,8 +49,14 @@ public class MyPosts extends Fragment {
         } else {
             goLoginScreen();
         }
+
+        //TODO : 나의 ID로 mycapsules 를 받아와야 합니다.
+
+
         return rootview;
     }
+
+
 
     private void goLoginScreen() {
         Intent intent = new Intent(getContext(), LoginActivity.class);
