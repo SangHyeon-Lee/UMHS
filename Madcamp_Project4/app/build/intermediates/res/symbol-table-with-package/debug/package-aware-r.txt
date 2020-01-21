@@ -1266,6 +1266,7 @@ id com_facebook_tooltip_bubble_view_text_body
 id com_facebook_tooltip_bubble_view_top_pointer
 id comment
 id comment_name
+id comment_post
 id comment_profile
 id comment_text
 id compass
@@ -1341,7 +1342,6 @@ id line1
 id line3
 id listMode
 id list_item
-id location
 id loginButton
 id masked
 id media_actions
@@ -1372,6 +1372,7 @@ id parentPanel
 id parent_matrix
 id percent
 id pin
+id post_button
 id post_pic
 id post_text
 id profile_picture
@@ -1409,6 +1410,7 @@ id shortcut
 id showCustom
 id showHome
 id showTitle
+id show_capsule
 id small
 id smallLabel
 id snackbar_action

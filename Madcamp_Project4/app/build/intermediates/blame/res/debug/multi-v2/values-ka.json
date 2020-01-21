@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\q\\UMHS\\Madcamp_Project4\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-ka\\values-ka.xml",
+            "outputFile": "C:\\umhscompany\\UMHS\\Madcamp_Project4\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-ka\\values-ka.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\q\\.gradle\\caches\\transforms-2\\files-2.1\\6bb34a103a69f96629110afa10d870cc\\jetified-play-services-basement-17.0.0\\res\\values-ka\\values.xml",
+                    "source": "C:\\Users\\q\\.gradle\\caches\\transforms-2\\files-2.1\\8f2d8b63276e18e0cbd380ddf656aa51\\jetified-play-services-basement-17.0.0\\res\\values-ka\\values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",

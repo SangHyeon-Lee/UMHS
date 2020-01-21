@@ -2,28 +2,26 @@ package com.example.myapplication.dbmodels;
 
 
 public class capsulelocdatas {
-    private final String CapsuleId;
-    private final Double Latitude;
-    private final Double Longtitude;
-    private final Double Altitude;
+    private final String capsuleid;
+    private final Double latitude;
+    private final Double longtitude;
+    private final Double altitude;
 
     public  capsulelocdatas(String capsuleId, Double Lat, Double Long, Double Al){
-            this.CapsuleId = capsuleId;
-            this.Latitude = Lat;
-            this.Longtitude = Long;
-            this.Altitude = Al;
+            this.capsuleid = capsuleId;
+            this.latitude = Lat;
+            this.longtitude = Long;
+            this.altitude = Al;
     }
-    public String getCapsuleId(){
-        return CapsuleId;
-    }
+    public String getCapsuleId(){return capsuleid; }
     public  Double getLatitude(){
-        return Latitude;
+        return latitude;
     }
     public  Double getLongtitude(){
-        return Longtitude;
+        return longtitude;
     }
     public  Double getAltitude(){
-        return Altitude;
+        return altitude;
     }
 
 }

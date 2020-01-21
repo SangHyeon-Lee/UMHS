@@ -1,6 +1,7 @@
 package com.example.myapplication;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
@@ -11,17 +12,23 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.database.Observable;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
 import android.media.ExifInterface;
 import android.net.Uri;
+import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
+import android.os.FileUtils;
 import android.provider.ContactsContract;
 import android.provider.MediaStore;
 import android.util.Log;
+import android.view.View;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 
@@ -30,7 +37,10 @@ import android.widget.Toast;
 import com.example.myapplication.dbmodels.capsuledatas;
 import com.example.myapplication.dbmodels.capsulelocdatas;
 import com.example.myapplication.dbmodels.comments;
+import com.example.myapplication.dbmodels.mycaps;
+import com.example.myapplication.dbmodels.mycapsules;
 import com.example.myapplication.dbmodels.rescapdatas;
+import com.example.myapplication.network.NetRetrofit;
 import com.example.myapplication.network.RetrofitService;
 import com.google.gson.JsonObject;
 
@@ -54,6 +64,10 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 
+import okhttp3.MediaType;
+import okhttp3.MultipartBody;
+import okhttp3.RequestBody;
+import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -62,6 +76,9 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.Objects;
+
+import javax.xml.transform.Result;
 
 
 public class Add_Post extends AppCompatActivity {
@@ -75,8 +92,9 @@ public class Add_Post extends AppCompatActivity {
     private static final int REQUEST_IMAGE_CAPTURE = 672;
     private String imageFilePath;
     private Uri photoUri;
+    private File photo_send;
     private GpsTracker gpsTracker;
-
+    private Button post_button;
     //TODO: post 1)mycapsules , 2)capsulelocdata, 3)capsuledata 3개를 한번에 올려줘야 합니다.
     //TODO: 3)을 한 후에 capsuleID를 받아온 후 1),2)를 올려줘야 합니다. 자신의 위치정보는 Gpstracker로 받아옵니다.
 
@@ -89,25 +107,28 @@ public class Add_Post extends AppCompatActivity {
         post_text = findViewById(R.id.post_text);
         name_text = findViewById(R.id.name);
         date = findViewById(R.id.date);
-
+        post_button = findViewById(R.id.post_button);
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-        String name = user.getDisplayName();
+        final String name = user.getDisplayName();
         Uri profile = user.getPhotoUrl();
+        final String prof = profile.toString();
 
         name_text.setText(name);
         Glide.with(this).load(profile).into(profile_view);
 
 
-
+        //post버튼을 눌렀을때 실행되야 하는 놈. 수정해야할놈들있음.
+        //TODO: 상현 여기 txt는 edittext firstUpload안에 Reg는 현재유저 이름으로 넣어줘용
         sendTakePhotoIntent();
 
-        gpsTracker = new GpsTracker(this);
-        double mylat = gpsTracker.getLatitude();
-        double mylong = gpsTracker.getLongitude();
-        double myal = gpsTracker.getAltitude();
+        post_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                firstUpload(post_text.getText().toString(), name, prof);
+                finish();
+            }
+        });
 
-        capsuleId = firstUpload("TextofCapsule");
-        secondUpload(capsuleId,mylat,mylong,myal);
 
     }
 
@@ -127,16 +148,16 @@ public class Add_Post extends AppCompatActivity {
     private void sendTakePhotoIntent() {
         Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
-            File photoFile = null;
+            photo_send = null;
             try {
-                photoFile = createImageFile();
+                photo_send = createImageFile();
+
             } catch (IOException ex) {
                 // Error occurred while creating the File
             }
 
-            if (photoFile != null) {
-                photoUri = FileProvider.getUriForFile(this, getPackageName(), photoFile);
-
+            if (photo_send != null) {
+                photoUri = FileProvider.getUriForFile(this, getPackageName(), photo_send);
                 takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, photoUri);
                 startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
             }
@@ -161,8 +182,7 @@ public class Add_Post extends AppCompatActivity {
     }
 
     @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data)
-    {
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
             Bitmap bitmap = BitmapFactory.decodeFile(imageFilePath);
             ExifInterface exif = null;
@@ -186,57 +206,122 @@ public class Add_Post extends AppCompatActivity {
         }
     }
 
-    public String firstUpload(String txt){
+    public void firstUpload(String txt, String name, String prof) {
+        gpsTracker = new GpsTracker(this);
+        final double mylat = gpsTracker.getLatitude();
+        final double mylong = gpsTracker.getLongitude();
+        final double myal = gpsTracker.getAltitude();
+        final String goname = name;
+        final File files = photo_send;
+        final Uri files2 = photoUri;
         //Capsule post시 서버에 올라가고, Capsuleid를 받아옴.
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(RetrofitService.URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         RetrofitService retrofitExService = retrofit.create(RetrofitService.class);
-        final String[] capid = new String[1];
-        comments temp2 = new comments("chaewon","getyourcrayon");
-        List<comments> temp = new ArrayList<comments>();
-        temp.add(temp2);
-        retrofitExService.postData(new capsuledatas("Itshouldbechanged", txt, 1234, temp,0)).enqueue(new Callback<rescapdatas>() {
+        uploadImage(files);
+        retrofitExService.postData(new capsuledatas(goname, txt, files.getName(), null, 0, prof)).enqueue(new Callback<rescapdatas>() {
             @Override
             public void onResponse(@NonNull Call<rescapdatas> call, @NonNull Response<rescapdatas> response) {
                 if (response.isSuccessful()) {
                     rescapdatas body = response.body();
-                    if (body != null) {
-                        capid[0] = body.get_id();
-                    }
+                    secondUpload(body.get_id(), mylat, mylong, myal);
+                    thirdUpload(goname, body.get_id());
                 }
             }
+
             @Override
             public void onFailure(@NonNull Call<rescapdatas> call, @NonNull Throwable t) {
             }
         });
-        return capid[0];
     }
-    public void secondUpload(String Cid, double lat, double lon, double al){
+
+    public void secondUpload(String Cid, double lat, double lon, double al) {
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(RetrofitService.URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         RetrofitService retrofitExService = retrofit.create(RetrofitService.class);
-        final String[] capid = new String[1];
-        comments temp2 = new comments("chaewon","getyourcrayon");
-        List<comments> temp = new ArrayList<comments>();
-        temp.add(temp2);
-        retrofitExService.postData2(new capsulelocdatas(Cid, lat,lon,al)).enqueue(new Callback<capsulelocdatas>() {
+        retrofitExService.postData2(new capsulelocdatas(Cid, lat, lon, al)).enqueue(new Callback<capsulelocdatas>() {
             @Override
             public void onResponse(@NonNull Call<capsulelocdatas> call, @NonNull Response<capsulelocdatas> response) {
                 if (response.isSuccessful()) {
                     return;
                 }
             }
+
             @Override
             public void onFailure(@NonNull Call<capsulelocdatas> call, @NonNull Throwable t) {
             }
         });
         return;
     }
-    public void thirdUpload(String Cid){
+
+    public void thirdUpload(String Username, String Cid) {
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(RetrofitService.URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+        RetrofitService retrofitExService = retrofit.create(RetrofitService.class);
+        mycaps temp = new mycaps(Cid);
+        retrofitExService.postData3(new mycapsules(Username, temp)).enqueue(new Callback<mycapsules>() {
+            @Override
+            public void onResponse(@NonNull Call<mycapsules> call, @NonNull Response<mycapsules> response) {
+                if (response.isSuccessful()) {
+                    return;
+                }
+            }
+
+            @Override
+            public void onFailure(@NonNull Call<mycapsules> call, @NonNull Throwable t) {
+            }
+        });
         return;
     }
+
+    //    public void uploadImage(File file, String key) {
+//        // create multipart
+//        RequestBody requestFile = RequestBody.create(MediaType.parse("multipart/form-data"), file);
+//        MultipartBody.Part body = MultipartBody.Part.createFormData("img", file.getName(), requestFile);
+//        Retrofit retrofit = new Retrofit.Builder()
+//                .baseUrl(RetrofitService.URL)
+//                .addConverterFactory(GsonConverterFactory.create())
+//                .build();
+//        RetrofitService retrofitExService = retrofit.create(RetrofitService.class);
+//        retrofitExService.uploadImages(body).enqueue(new Callback<Result>() {
+//            @Override
+//            public void onResponse(@NonNull Call<Result> call, @NonNull Response<Result> response) {
+//            }
+//            @Override
+//            public void onFailure(@NonNull Call<Result> call, @NonNull Throwable t) {
+//            }
+//        });
+//
+//    }
+    private void uploadImage(File files) {
+        File file = new File(files.toString());
+
+
+        RequestBody requestFile = RequestBody.create(MediaType.parse("multipart/form-data"), file);
+        MultipartBody.Part body = MultipartBody.Part.createFormData("img", file.getName(), requestFile);
+
+
+        RetrofitService mApiService = RetrofitService.retrofit.create(RetrofitService.class);
+        Call<ResponseBody> mService = mApiService.uploadImages(body);
+        mService.enqueue(new Callback<ResponseBody>() {
+            @Override
+            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+
+            }
+
+            @Override
+            public void onFailure(Call<ResponseBody> call, Throwable t) {
+                call.cancel();
+                Toast.makeText(getApplicationContext(), "Please check your network connection", Toast.LENGTH_LONG).show();
+            }
+        });
+    }
+
+
 }

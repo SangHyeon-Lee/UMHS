@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +13,7 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.example.myapplication.dbmodels.comments;
 
 import java.lang.reflect.Array;
@@ -48,10 +50,10 @@ public class Comment_adapter extends BaseAdapter {
         TextView comment_text = (TextView) convertView.findViewById(R.id.comment_text);
 
         comments comment = getItem(position);
-        // Set image
+        Glide.with(context).load(Uri.parse(comment.getProfile())).into(comment_profile);
         comment_name.setText(comment.getUsername());
         comment_text.setText(comment.getComment());
-        return null;
+        return convertView;
     }
 
     public void addItem(comments comment) {
