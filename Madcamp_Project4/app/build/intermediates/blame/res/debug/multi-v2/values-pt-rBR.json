@@ -1,25 +1,8 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\umhscompany\\UMHS\\Madcamp_Project4\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-pt-rBR\\values-pt-rBR.xml",
+            "outputFile": "C:\\Users\\q\\UMHS\\Madcamp_Project4\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-pt-rBR\\values-pt-rBR.xml",
             "map": [
-                {
-                    "source": "C:\\Users\\q\\.gradle\\caches\\transforms-2\\files-2.1\\8f2d8b63276e18e0cbd380ddf656aa51\\jetified-play-services-basement-17.0.0\\res\\values-pt-rBR\\values.xml",
-                    "from": {
-                        "startLines": "4",
-                        "startColumns": "0",
-                        "startOffsets": "251",
-                        "endColumns": "203",
-                        "endOffsets": "454"
-                    },
-                    "to": {
-                        "startLines": "37",
-                        "startColumns": "4",
-                        "startOffsets": "4014",
-                        "endColumns": "203",
-                        "endOffsets": "4213"
-                    }
-                },
                 {
                     "source": "C:\\Users\\q\\.gradle\\caches\\transforms-2\\files-2.1\\daee6df2c31aab579f82be9a195199ab\\appcompat-1.0.2\\res\\values-pt-rBR\\values-pt-rBR.xml",
                     "from": {
@@ -52,6 +35,23 @@
                         "startOffsets": "2844,2951,3131,3260,3370,3596,3728,3880,4218,4447,4557,4752,4884,5100,5287,5386,5482",
                         "endColumns": "106,179,128,109,225,131,151,133,228,109,194,131,215,186,98,95,112",
                         "endOffsets": "2946,3126,3255,3365,3591,3723,3875,4009,4442,4552,4747,4879,5095,5282,5381,5477,5590"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\q\\.gradle\\caches\\transforms-2\\files-2.1\\6bb34a103a69f96629110afa10d870cc\\jetified-play-services-basement-17.0.0\\res\\values-pt-rBR\\values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "251",
+                        "endColumns": "203",
+                        "endOffsets": "454"
+                    },
+                    "to": {
+                        "startLines": "37",
+                        "startColumns": "4",
+                        "startOffsets": "4014",
+                        "endColumns": "203",
+                        "endOffsets": "4213"
                     }
                 },
                 {

@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".View_Capsule">
 
+
     <ImageView
         android:id="@+id/compass"
         android:layout_width="80dp"
         android:layout_height="80dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
         android:layout_marginStart="12dp"
         android:layout_marginLeft="12dp"
         android:layout_marginTop="12dp"
@@ -18,48 +22,92 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@drawable/compass_2" />
 
-    <TextView
-        android:id="@+id/longitude"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
-        android:layout_marginLeft="60dp"
-        android:layout_marginTop="13dp"
-        android:text="TextView"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/latitude" />
-
-    <TextView
-        android:id="@+id/latitude"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
-        android:layout_marginLeft="60dp"
-        android:layout_marginTop="152dp"
-        android:text="TextView"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/compass" />
-
     <ImageView
-        android:id="@+id/dot"
+        android:id="@+id/dot0"
+        android:layout_width="8dp"
+        android:layout_height="8dp"
+        android:src="@drawable/blue_dot"
+        tools:layout_editor_absoluteX="48dp"
+        tools:layout_editor_absoluteY="327dp" />
+    <ImageView
+        android:id="@+id/dot1"
+        android:layout_width="8dp"
+        android:layout_height="8dp"
+        android:src="@drawable/blue_dot"
+        tools:layout_editor_absoluteX="48dp"
+        tools:layout_editor_absoluteY="327dp" />
+    <ImageView
+        android:id="@+id/dot2"
+        android:layout_width="8dp"
+        android:layout_height="8dp"
+        android:src="@drawable/blue_dot"
+        tools:layout_editor_absoluteX="48dp"
+        tools:layout_editor_absoluteY="327dp" />
+    <ImageView
+        android:id="@+id/dot3"
+        android:layout_width="8dp"
+        android:layout_height="8dp"
+        android:src="@drawable/blue_dot"
+        tools:layout_editor_absoluteX="48dp"
+        tools:layout_editor_absoluteY="327dp" />
+    <ImageView
+        android:id="@+id/dot4"
+        android:layout_width="8dp"
+        android:layout_height="8dp"
+        android:src="@drawable/blue_dot"
+        tools:layout_editor_absoluteX="48dp"
+        tools:layout_editor_absoluteY="327dp" />
+    <ImageView
+        android:id="@+id/dot5"
+        android:layout_width="8dp"
+        android:layout_height="8dp"
+        android:src="@drawable/blue_dot"
+        tools:layout_editor_absoluteX="48dp"
+        tools:layout_editor_absoluteY="327dp" />
+    <ImageView
+        android:id="@+id/dot6"
+        android:layout_width="8dp"
+        android:layout_height="8dp"
+        android:src="@drawable/blue_dot"
+        tools:layout_editor_absoluteX="48dp"
+        tools:layout_editor_absoluteY="327dp" />
+    <ImageView
+        android:id="@+id/dot7"
+        android:layout_width="8dp"
+        android:layout_height="8dp"
+        android:src="@drawable/blue_dot"
+        tools:layout_editor_absoluteX="48dp"
+        tools:layout_editor_absoluteY="327dp" />
+    <ImageView
+        android:id="@+id/dot8"
+        android:layout_width="8dp"
+        android:layout_height="8dp"
+        android:src="@drawable/blue_dot"
+        tools:layout_editor_absoluteX="48dp"
+        tools:layout_editor_absoluteY="327dp" />
+    <ImageView
+        android:id="@+id/dot9"
         android:layout_width="8dp"
         android:layout_height="8dp"
         android:src="@drawable/blue_dot"
         tools:layout_editor_absoluteX="48dp"
         tools:layout_editor_absoluteY="327dp" />
 
+
     <ImageButton
         android:id="@+id/button_addpost"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_marginStart="156dp"
-        android:layout_marginLeft="156dp"
-        android:layout_marginBottom="48dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="155dp"
+        android:layout_marginLeft="155dp"
+        android:layout_marginBottom="54dp"
         android:background="#00FFFFFF"
         android:scaleType="centerCrop"
         android:src="@drawable/plus_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
-
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>
