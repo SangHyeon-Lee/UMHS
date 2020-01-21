@@ -11,6 +11,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.database.Observable;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
@@ -29,6 +30,8 @@ import android.widget.Toast;
 import com.example.myapplication.dbmodels.capsuledatas;
 import com.example.myapplication.dbmodels.capsulelocdatas;
 import com.example.myapplication.dbmodels.comments;
+import com.example.myapplication.dbmodels.mycaps;
+import com.example.myapplication.dbmodels.mycapsules;
 import com.example.myapplication.dbmodels.rescapdatas;
 import com.example.myapplication.network.NetRetrofit;
 import com.example.myapplication.network.RetrofitService;
@@ -43,6 +46,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
@@ -51,6 +55,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import okhttp3.MediaType;
+import okhttp3.MultipartBody;
+import okhttp3.RequestBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -60,6 +67,8 @@ import retrofit2.converter.gson.GsonConverterFactory;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Objects;
+
+import javax.xml.transform.Result;
 
 
 public class Add_Post extends AppCompatActivity {
@@ -95,42 +104,22 @@ public class Add_Post extends AppCompatActivity {
 
 
         int permissionCheck = ContextCompat.checkSelfPermission(Add_Post.this, Manifest.permission.CAMERA);
-        if(permissionCheck == PackageManager.PERMISSION_DENIED){
-            ActivityCompat.requestPermissions(Add_Post.this, new String[]{Manifest.permission.CAMERA},0);
-        }else{
+        if (permissionCheck == PackageManager.PERMISSION_DENIED) {
+            ActivityCompat.requestPermissions(Add_Post.this, new String[]{Manifest.permission.CAMERA}, 0);
+        } else {
             Intent intent2 = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-            startActivityForResult(intent2,1);
+            startActivityForResult(intent2, 1);
         }
-        gpsTracker = new GpsTracker(this);
-        double mylat = gpsTracker.getLatitude();
-        double mylong = gpsTracker.getLongitude();
-        double myal = gpsTracker.getAltitude();
 
-
-//        capsuleId = firstUpload("TextofCapsule");
-        comments temp2 = new comments("chaewon","getyourcrayon");
-        List<comments> temp = new ArrayList<comments>();
-        temp.add(temp2);
-        capsuledatas uplds = new capsuledatas("Itshouldbechanged", "txt", 1234, temp,0);
-        try{
-            rescapdatas response = uplds.upload();
-            capsuleId = response.get_id();
-        }
-        catch (Exception e){
-
-        }
-        secondUpload(capsuleId,mylat,mylong,myal);
-
-
-
-
+        //post버튼을 눌렀을때 실행되야 하는 놈. 수정해야할놈들있음.
+        //TODO: 상현 여기 txt는 edittext firstUpload안에 Reg는 현재유저 이름으로 넣어줘용
+        firstUpload("TextofCapsuleitshouldbechanged",name);
 
 
     }
 
     @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data)
-    {
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         try {
             Bitmap photo = (Bitmap) data.getExtras().get("data");
@@ -140,58 +129,101 @@ public class Add_Post extends AppCompatActivity {
         }
     }
 
-//    public String firstUpload(String txt){
-//        //Capsule post시 서버에 올라가고, Capsuleid를 받아옴.
-//        Retrofit retrofit = new Retrofit.Builder()
-//                .baseUrl(RetrofitService.URL)
-//                .addConverterFactory(GsonConverterFactory.create())
-//                .build();
-//        RetrofitService retrofitExService = retrofit.create(RetrofitService.class);
-//        final String[] capid = new String[1];
-//        comments temp2 = new comments("chaewon","getyourcrayon");
-//        List<comments> temp = new ArrayList<comments>();
-//        temp.add(temp2);
-//        retrofitExService.postData(new capsuledatas("Itshouldbechanged", txt, 1234, temp,0)).enqueue(new Callback<rescapdatas>() {
-//            @Override
-//            public void onResponse(@NonNull Call<rescapdatas> call, @NonNull Response<rescapdatas> response) {
-//                if (response.isSuccessful()) {
-//                    rescapdatas body = response.body();
-//                    if (body != null) {
-//                        capid[0] = body.get_id();
-//                    }
-//                }
-//            }
-//            @Override
-//            public void onFailure(@NonNull Call<rescapdatas> call, @NonNull Throwable t) {
-//            }
-//        });
-//        return capid[0];
-//    }
-
-
-
-
-
-    public void secondUpload(String Cid, double lat, double lon, double al){
+    public void firstUpload(String txt, String name) {
+        gpsTracker = new GpsTracker(this);
+        final double mylat = gpsTracker.getLatitude();
+        final double mylong = gpsTracker.getLongitude();
+        final double myal = gpsTracker.getAltitude();
+        final String goname = name;
+        //Capsule post시 서버에 올라가고, Capsuleid를 받아옴.
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(RetrofitService.URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         RetrofitService retrofitExService = retrofit.create(RetrofitService.class);
-        retrofitExService.postData2(new capsulelocdatas(Cid, lat,lon,al)).enqueue(new Callback<capsulelocdatas>() {
+        comments temp2 = new comments("chaewon", "getyourcrayon");
+        List<comments> temp = new ArrayList<comments>();
+        temp.add(temp2);
+        retrofitExService.postData(new capsuledatas("Itshouldbechanged", txt, 1234, temp, 0)).enqueue(new Callback<rescapdatas>() {
+            @Override
+            public void onResponse(@NonNull Call<rescapdatas> call, @NonNull Response<rescapdatas> response) {
+                if (response.isSuccessful()) {
+                    rescapdatas body = response.body();
+                    Toast.makeText(getApplicationContext(), body.get_id(), Toast.LENGTH_LONG).show();
+                    secondUpload(body.get_id(), mylat, mylong, myal);
+                    thirdUpload(goname ,body.get_id());
+                    //uploadImage(imagefile, body.get_id());
+                }
+            }
+
+            @Override
+            public void onFailure(@NonNull Call<rescapdatas> call, @NonNull Throwable t) {
+            }
+        });
+    }
+
+    public void secondUpload(String Cid, double lat, double lon, double al) {
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(RetrofitService.URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+        RetrofitService retrofitExService = retrofit.create(RetrofitService.class);
+        retrofitExService.postData2(new capsulelocdatas(Cid, lat, lon, al)).enqueue(new Callback<capsulelocdatas>() {
             @Override
             public void onResponse(@NonNull Call<capsulelocdatas> call, @NonNull Response<capsulelocdatas> response) {
                 if (response.isSuccessful()) {
                     return;
                 }
             }
+
             @Override
             public void onFailure(@NonNull Call<capsulelocdatas> call, @NonNull Throwable t) {
             }
         });
         return;
     }
-    public void thirdUpload(String Cid){
+
+    public void thirdUpload(String Username, String Cid) {
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(RetrofitService.URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+        RetrofitService retrofitExService = retrofit.create(RetrofitService.class);
+        mycaps temp = new mycaps(Cid);
+        retrofitExService.postData3(new mycapsules(Username,temp)).enqueue(new Callback<mycapsules>() {
+            @Override
+            public void onResponse(@NonNull Call<mycapsules> call, @NonNull Response<mycapsules> response) {
+                if (response.isSuccessful()) {
+                    return;
+                }
+            }
+
+            @Override
+            public void onFailure(@NonNull Call<mycapsules> call, @NonNull Throwable t) {
+            }
+        });
         return;
     }
+
+    public void uploadImage(File file, String key) {
+        // create multipart
+        RequestBody requestFile = RequestBody.create(MediaType.parse("multipart/form-data"), file);
+        MultipartBody.Part body = MultipartBody.Part.createFormData("img", key, requestFile);
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(RetrofitService.URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+        RetrofitService retrofitExService = retrofit.create(RetrofitService.class);
+        retrofitExService.uploadImages(body).enqueue(new Callback<Result>() {
+            @Override
+            public void onResponse(@NonNull Call<Result> call, @NonNull Response<Result> response) {
+            }
+            @Override
+            public void onFailure(@NonNull Call<Result> call, @NonNull Throwable t) {
+            }
+        });
+
+    }
+
+
 }
