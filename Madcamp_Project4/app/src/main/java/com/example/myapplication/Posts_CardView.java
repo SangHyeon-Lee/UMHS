@@ -3,6 +3,7 @@ package com.example.myapplication;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -11,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.example.myapplication.dbmodels.capsuledatas;
 import com.example.myapplication.dbmodels.comments;
 
@@ -57,6 +59,7 @@ public class Posts_CardView extends AppCompatActivity {
 
         name_text.setText(name);
         text_text.setText(text);
+        Glide.with(this).load(Uri.parse("https://cosmo-madcamp.s3.ap-northeast-2.amazonaws.com/book.png")).into(img_view);
         //img_view.set---
         comment_view.setAdapter(comment_adapter);
         likes_view.setText(likes);

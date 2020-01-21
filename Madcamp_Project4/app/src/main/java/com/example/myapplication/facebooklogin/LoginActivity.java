@@ -2,6 +2,7 @@ package com.example.myapplication.facebooklogin;
 
 import android.content.Context;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.AttributeSet;
@@ -51,7 +52,15 @@ public class LoginActivity extends AppCompatActivity {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_login);
         background = (VideoView) findViewById(R.id.background_video);
-        Uri uri = Uri.parse("android.resource://"+getPackageName()+"/"+R.raw.background_logo);
+
+        background.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+                mp.setLooping(true);
+            }
+        });
+
+        Uri uri = Uri.parse("android.resource://"+getPackageName()+"/"+R.raw.background_ultra);
         background.setVideoURI(uri);
         background.start();
 
@@ -89,6 +98,7 @@ public class LoginActivity extends AppCompatActivity {
             }
         };
     }
+
 
 
     private void handleFacebookAccessToken(AccessToken accessToken) {
