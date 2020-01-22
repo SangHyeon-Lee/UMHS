@@ -1,10 +1,31 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\umhscompany\\UMHS\\Madcamp_Project4\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-cs\\values-cs.xml",
+            "outputFile": "C:\\Users\\q\\UMHS\\Madcamp_Project4\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-cs\\values-cs.xml",
             "map": [
                 {
+<<<<<<< HEAD
+                    "source": "C:\\Users\\q\\.gradle\\caches\\transforms-2\\files-2.1\\6bb34a103a69f96629110afa10d870cc\\jetified-play-services-basement-17.0.0\\res\\values-cs\\values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "247",
+                        "endColumns": "201",
+                        "endOffsets": "448"
+                    },
+                    "to": {
+                        "startLines": "60",
+                        "startColumns": "4",
+                        "startOffsets": "6518",
+                        "endColumns": "201",
+                        "endOffsets": "6715"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\q\\.gradle\\caches\\transforms-2\\files-2.1\\0b8dc5f18d5f8cd9511e6c261cbc4b1b\\jetified-facebook-login-4.42.0\\res\\values-cs\\values-cs.xml",
+=======
                     "source": "C:\\Users\\q\\.gradle\\caches\\transforms-2\\files-2.1\\5a125fe786446e3603f7e05e529504a4\\core-1.14.0\\res\\values-cs\\values.xml",
+>>>>>>> 9bdfd3f3d7a4d27fa875230dc5f12ed8a43548be
                     "from": {
                         "startLines": "4,5,6,7,8",
                         "startColumns": "0,0,0,0,0",
@@ -87,6 +108,8 @@
                         "endColumns": "100",
                         "endOffsets": "8715"
                     }
+<<<<<<< HEAD
+=======
                 },
                 {
                     "source": "C:\\Users\\q\\.gradle\\caches\\transforms-2\\files-2.1\\84002cc20f5e9bd8a4d5db99f8dab20a\\jetified-play-services-basement-17.0.0\\res\\values-cs\\values.xml",
@@ -104,6 +127,7 @@
                         "endColumns": "201",
                         "endOffsets": "7145"
                     }
+>>>>>>> 9bdfd3f3d7a4d27fa875230dc5f12ed8a43548be
                 }
             ]
         }

@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\umhscompany\\UMHS\\Madcamp_Project4\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
+            "outputFile": "C:\\Users\\q\\UMHS\\Madcamp_Project4\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
             "map": [
                 {
                     "source": "C:\\Users\\q\\.gradle\\caches\\transforms-2\\files-2.1\\c7a372f59bb865f2aeea0814534d71a1\\jetified-filament-android-1.14.0\\res\\values\\values.xml",
@@ -40,7 +40,28 @@
                     }
                 },
                 {
+<<<<<<< HEAD
+                    "source": "C:\\Users\\q\\UMHS\\Madcamp_Project4\\app\\build\\generated\\res\\google-services\\debug\\values\\values.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,199,308,390,494,603,723,821",
+                        "endColumns": "143,108,81,103,108,119,97,74",
+                        "endOffsets": "194,303,385,489,598,718,816,891"
+                    },
+                    "to": {
+                        "startLines": "667,673,675,676,677,678,679,689",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "42993,43629,43801,43883,43987,44096,44216,45450",
+                        "endColumns": "143,108,81,103,108,119,97,74",
+                        "endOffsets": "43132,43733,43878,43982,44091,44211,44309,45520"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\q\\.gradle\\caches\\transforms-2\\files-2.1\\daee6df2c31aab579f82be9a195199ab\\appcompat-1.0.2\\res\\values\\values.xml",
+=======
                     "source": "C:\\Users\\q\\.gradle\\caches\\transforms-2\\files-2.1\\2d1a5f7e2231b04c00e6fc3ebfe8f50f\\recyclerview-1.0.0\\res\\values\\values.xml",
+>>>>>>> 9bdfd3f3d7a4d27fa875230dc5f12ed8a43548be
                     "from": {
                         "startLines": "30,31,32,33,34,35,36,2",
                         "startColumns": "4,4,4,4,4,4,4,4",
@@ -59,6 +80,26 @@
                     }
                 },
                 {
+<<<<<<< HEAD
+                    "source": "C:\\Users\\q\\UMHS\\Madcamp_Project4\\app\\src\\main\\res\\values\\strings.xml",
+                    "from": {
+                        "startLines": "1,5,6,2,3,8,7,4",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "17,247,296,70,131,385,344,203",
+                        "endColumns": "51,47,46,59,70,62,39,42",
+                        "endOffsets": "64,290,338,125,197,443,379,241"
+                    },
+                    "to": {
+                        "startLines": "620,623,668,671,672,674,681,692",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "37951,38284,43137,43498,43558,43738,44467,45649",
+                        "endColumns": "51,47,46,59,70,62,39,42",
+                        "endOffsets": "37998,38327,43179,43553,43624,43796,44502,45687"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\q\\UMHS\\Madcamp_Project4\\app\\src\\main\\res\\values\\styles.xml",
+=======
                     "source": "C:\\umhscompany\\UMHS\\Madcamp_Project4\\app\\src\\main\\res\\values\\styles.xml",
                     "from": {
                         "startLines": "3,18,22,32,27",
@@ -79,6 +120,7 @@
                 },
                 {
                     "source": "C:\\Users\\q\\.gradle\\caches\\transforms-2\\files-2.1\\73c6ee8741221e097915aa921c977d37\\coordinatorlayout-1.0.0\\res\\values\\values.xml",
+>>>>>>> 9bdfd3f3d7a4d27fa875230dc5f12ed8a43548be
                     "from": {
                         "startLines": "2,102,3,13",
                         "startColumns": "4,4,4,4",
@@ -97,7 +139,28 @@
                     }
                 },
                 {
+<<<<<<< HEAD
+                    "source": "C:\\Users\\q\\.gradle\\caches\\transforms-2\\files-2.1\\6bb34a103a69f96629110afa10d870cc\\jetified-play-services-basement-17.0.0\\res\\values\\values.xml",
+                    "from": {
+                        "startLines": "4,7",
+                        "startColumns": "0,0",
+                        "startOffsets": "238,401",
+                        "endColumns": "63,166",
+                        "endOffsets": "301,567"
+                    },
+                    "to": {
+                        "startLines": "573,657",
+                        "startColumns": "4,4",
+                        "startOffsets": "34696,41700",
+                        "endColumns": "67,166",
+                        "endOffsets": "34759,41862"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\q\\.gradle\\caches\\transforms-2\\files-2.1\\503246db64dcbb120c121745b36c75fd\\play-services-base-17.0.0\\res\\values\\values.xml",
+=======
                     "source": "C:\\Users\\q\\.gradle\\caches\\transforms-2\\files-2.1\\907896e069aa31f26c9bc9c790800a9e\\play-services-base-17.0.0\\res\\values\\values.xml",
+>>>>>>> 9bdfd3f3d7a4d27fa875230dc5f12ed8a43548be
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,33,46",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
@@ -133,7 +196,30 @@
                     }
                 },
                 {
+<<<<<<< HEAD
+                    "source": "C:\\Users\\q\\.gradle\\caches\\transforms-2\\files-2.1\\1d3a6e218b14f841ab46c5c31964fe7e\\jetified-facebook-share-4.42.0\\res\\values\\values.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,11",
+                        "startColumns": "4,4,4,4,4",
+                        "startOffsets": "55,158,242,304,740",
+                        "endLines": "2,3,4,10,14",
+                        "endColumns": "102,83,61,12,12",
+                        "endOffsets": "153,237,299,735,986"
+                    },
+                    "to": {
+                        "startLines": "210,211,216,3139,3145",
+                        "startColumns": "4,4,4,4,4",
+                        "startOffsets": "11223,11326,11693,205624,206060",
+                        "endLines": "210,211,216,3144,3148",
+                        "endColumns": "102,83,61,12,12",
+                        "endOffsets": "11321,11405,11750,206055,206306"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\q\\.gradle\\caches\\transforms-2\\files-2.1\\095fcccbb31920d0e8efccb99772a9e9\\facebook-messenger-4.42.0\\res\\values\\values.xml",
+=======
                     "source": "C:\\Users\\q\\.gradle\\caches\\transforms-2\\files-2.1\\84002cc20f5e9bd8a4d5db99f8dab20a\\jetified-play-services-basement-17.0.0\\res\\values\\values.xml",
+>>>>>>> 9bdfd3f3d7a4d27fa875230dc5f12ed8a43548be
                     "from": {
                         "startLines": "4,7",
                         "startColumns": "0,0",
@@ -169,6 +255,9 @@
                     }
                 },
                 {
+<<<<<<< HEAD
+                    "source": "C:\\Users\\q\\UMHS\\Madcamp_Project4\\app\\src\\main\\res\\values\\colors.xml",
+=======
                     "source": "C:\\Users\\q\\.gradle\\caches\\transforms-2\\files-2.1\\ee319b630f3f2c862e248e6e2c3f4f0b\\jetified-facebook-common-4.42.0\\res\\values\\values.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,36,37,38,39,40,41,42,43,44,45,46,47,71,76,82,93,104,15",
@@ -227,21 +316,48 @@
                 },
                 {
                     "source": "C:\\Users\\q\\.gradle\\caches\\transforms-2\\files-2.1\\c92b5d844a82837e2922aa57884effbe\\jetified-facebook-share-4.42.0\\res\\values\\values.xml",
+>>>>>>> 9bdfd3f3d7a4d27fa875230dc5f12ed8a43548be
                     "from": {
-                        "startLines": "2,3,4,5,11",
-                        "startColumns": "4,4,4,4,4",
-                        "startOffsets": "55,158,242,304,740",
-                        "endLines": "2,3,4,10,14",
-                        "endColumns": "102,83,61,12,12",
-                        "endOffsets": "153,237,299,735,986"
+                        "startLines": "4,2,3",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "157,57,105",
+                        "endColumns": "45,46,50",
+                        "endOffsets": "198,99,151"
                     },
                     "to": {
+<<<<<<< HEAD
+                        "startLines": "196,197,198",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "10222,10268,10315",
+                        "endColumns": "45,46,50",
+                        "endOffsets": "10263,10310,10361"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\q\\.gradle\\caches\\transforms-2\\files-2.1\\2732a484c5ed91014065e667c4101e3a\\jetified-facebook-common-4.42.0\\res\\values\\values.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,36,37,38,39,40,41,42,43,44,45,46,47,71,76,82,93,104,15",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "150,202,273,353,432,520,599,679,754,818,895,970,1037,2091,2160,2239,2303,2377,2450,2523,2595,2668,2741,2806,2875,5077,5371,5721,6342,6973,1092",
+                        "endLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,36,37,38,39,40,41,42,43,44,45,46,47,75,81,92,103,106,35",
+                        "endColumns": "51,70,79,78,87,78,79,74,63,76,74,66,54,68,78,63,73,72,72,71,72,72,64,68,64,12,12,12,12,12,35",
+                        "endOffsets": "197,268,348,427,515,594,674,749,813,890,965,1032,1087,2155,2234,2298,2372,2445,2518,2590,2663,2736,2801,2870,2935,5366,5716,6337,6968,7147,2086"
+                    },
+                    "to": {
+                        "startLines": "199,200,201,202,203,204,205,206,212,213,214,215,217,370,371,372,374,375,376,377,378,379,380,381,382,3103,3108,3114,3125,3136,4942",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "10366,10418,10489,10569,10648,10736,10815,10895,11410,11474,11551,11626,11755,22206,22275,22354,22488,22562,22635,22708,22780,22853,22926,22991,23060,203549,203843,204193,204814,205445,313487",
+                        "endLines": "199,200,201,202,203,204,205,206,212,213,214,215,217,370,371,372,374,375,376,377,378,379,380,381,382,3107,3113,3124,3135,3138,4962",
+                        "endColumns": "51,70,79,78,87,78,79,74,63,76,74,66,54,68,78,63,73,72,72,71,72,72,64,68,64,12,12,12,12,12,35",
+                        "endOffsets": "10413,10484,10564,10643,10731,10810,10890,10965,11469,11546,11621,11688,11805,22270,22349,22413,22557,22630,22703,22775,22848,22921,22986,23055,23120,203838,204188,204809,205440,205619,314481"
+=======
                         "startLines": "252,253,258,3259,3265",
                         "startColumns": "4,4,4,4,4",
                         "startOffsets": "12724,12827,13194,212863,213299",
                         "endLines": "252,253,258,3264,3268",
                         "endColumns": "102,83,61,12,12",
                         "endOffsets": "12822,12906,13251,213294,213545"
+>>>>>>> 9bdfd3f3d7a4d27fa875230dc5f12ed8a43548be
                     }
                 },
                 {
@@ -281,6 +397,9 @@
                     }
                 },
                 {
+<<<<<<< HEAD
+                    "source": "C:\\Users\\q\\.gradle\\caches\\transforms-2\\files-2.1\\16eb53875ba78320b1fcf5cac2c4c8c7\\core-1.0.1\\res\\values\\values.xml",
+=======
                     "source": "C:\\umhscompany\\UMHS\\Madcamp_Project4\\app\\build\\generated\\res\\google-services\\debug\\values\\values.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
@@ -299,6 +418,7 @@
                 },
                 {
                     "source": "C:\\Users\\q\\.gradle\\caches\\transforms-2\\files-2.1\\389d1db25d9374810a2804a986782317\\facebook-messenger-4.42.0\\res\\values\\values.xml",
+>>>>>>> 9bdfd3f3d7a4d27fa875230dc5f12ed8a43548be
                     "from": {
                         "startLines": "2,3,6,9,15,19,22,28,32,43,46,49,52,55,58",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -336,6 +456,9 @@
                     }
                 },
                 {
+<<<<<<< HEAD
+                    "source": "C:\\Users\\q\\.gradle\\caches\\transforms-2\\files-2.1\\886df16c747a87ca7b380bdbaa998077\\media-1.0.0\\res\\values\\values.xml",
+=======
                     "source": "C:\\umhscompany\\UMHS\\Madcamp_Project4\\app\\src\\main\\res\\values\\colors.xml",
                     "from": {
                         "startLines": "4,2,3,7,11,12,5,6,8,9,10",
@@ -354,6 +477,7 @@
                 },
                 {
                     "source": "C:\\Users\\q\\.gradle\\caches\\transforms-2\\files-2.1\\5e8dfa2ff70279a5614ae5df430a17bf\\media-1.0.0\\res\\values\\values.xml",
+>>>>>>> 9bdfd3f3d7a4d27fa875230dc5f12ed8a43548be
                     "from": {
                         "startLines": "2,5,6,7,8,10,11,12,13,14",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4",
@@ -406,6 +530,24 @@
                     }
                 },
                 {
+<<<<<<< HEAD
+                    "source": "C:\\Users\\q\\.gradle\\caches\\transforms-2\\files-2.1\\0b8dc5f18d5f8cd9511e6c261cbc4b1b\\jetified-facebook-login-4.42.0\\res\\values\\values.xml",
+                    "from": {
+                        "startLines": "2,3,4,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,51,56,5,11",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,182,266,1159,1229,1311,1394,1475,1612,1727,1845,1940,2005,2073,2131,2203,2275,2372,2463,2537,2611,2724,2825,2888,2953,3118,3195,3277,3402,3488,3612,4017,4341,358,819",
+                        "endLines": "2,3,4,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,50,55,63,10,16",
+                        "endColumns": "76,83,91,69,81,82,80,136,114,117,94,64,67,57,71,71,96,90,73,73,112,100,62,64,164,76,81,124,85,123,12,12,12,35,90",
+                        "endOffsets": "177,261,353,1224,1306,1389,1470,1607,1722,1840,1935,2000,2068,2126,2198,2270,2367,2458,2532,2606,2719,2820,2883,2948,3113,3190,3272,3397,3483,3607,4012,4336,4714,814,1154"
+                    },
+                    "to": {
+                        "startLines": "207,208,209,373,383,384,385,626,627,628,629,630,631,632,633,634,635,636,637,638,639,640,641,642,643,644,645,646,647,648,3149,3156,3161,4963,4969",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "10970,11047,11131,22418,23125,23207,23290,38523,38660,38775,38893,38988,39053,39121,39179,39251,39323,39420,39511,39585,39659,39772,39873,39936,40001,40166,40243,40325,40450,40536,206311,206716,207040,314486,314947",
+                        "endLines": "207,208,209,373,383,384,385,626,627,628,629,630,631,632,633,634,635,636,637,638,639,640,641,642,643,644,645,646,647,648,3155,3160,3168,4968,4974",
+                        "endColumns": "76,83,91,69,81,82,80,136,114,117,94,64,67,57,71,71,96,90,73,73,112,100,62,64,164,76,81,124,85,123,12,12,12,35,90",
+                        "endOffsets": "11042,11126,11218,22483,23202,23285,23366,38655,38770,38888,38983,39048,39116,39174,39246,39318,39415,39506,39580,39654,39767,39868,39931,39996,40161,40238,40320,40445,40531,40655,206711,207035,207413,314942,315282"
+=======
                     "source": "C:\\Users\\q\\.gradle\\caches\\transforms-2\\files-2.1\\63d9d68788871efe7a93c42883adae3a\\constraintlayout-1.1.3\\res\\values\\values.xml",
                     "from": {
                         "startLines": "2,3,11,12,13,14,15,19,20,21,22,25,26,29,32,33,34,35,36,39,42,43,44,45,50,53,56,57,58,63,64,65,68,71,72,75,78,81,84,85,88,91,92,97,98,103,106,109,110,111,112,113,114,115,116,117,118,127,128,129,130",
@@ -441,6 +583,7 @@
                         "endLines": "4476",
                         "endColumns": "20",
                         "endOffsets": "286159"
+>>>>>>> 9bdfd3f3d7a4d27fa875230dc5f12ed8a43548be
                     }
                 }
             ]

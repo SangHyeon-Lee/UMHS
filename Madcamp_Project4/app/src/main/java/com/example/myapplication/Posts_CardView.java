@@ -1,10 +1,15 @@
 package com.example.myapplication;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.drawable.GradientDrawable;
+import android.graphics.drawable.ShapeDrawable;
+import android.graphics.drawable.shapes.OvalShape;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.Editable;
 import android.view.View;
@@ -95,6 +100,7 @@ public class Posts_CardView extends AppCompatActivity {
                 .build();
         RetrofitService retrofitExService = retrofit.create(RetrofitService.class);
         retrofitExService.getCaps(new capsulelocdatas(capid, sh, sh, sh)).enqueue(new Callback<capsuledatas>() {
+            @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
             @Override
             public void onResponse(@NonNull Call<capsuledatas> call, @NonNull Response<capsuledatas> response) {
                 if (response.isSuccessful()) {
@@ -112,15 +118,30 @@ public class Posts_CardView extends AppCompatActivity {
                     }
 
 
-                    name_text.setText(name);
+                    name_text.setText(" "+name);
                     text_text.setText(text);
                     Glide.with(getApplicationContext()).load(Uri.parse(profile)).into(profile_image);
                     Glide.with(getApplicationContext()).load(Uri.parse("https://cosmo-madcamp.s3.ap-northeast-2.amazonaws.com/" + img)).into(img_view);
+
+                    if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
+                        GradientDrawable drawable=
+                                (GradientDrawable) getApplicationContext().getDrawable(R.drawable.background_rounding);
+                        profile_image.setBackground(drawable);
+                        profile_image.setClipToOutline(true);
+                    }
+                    if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
+                        GradientDrawable drawable=
+                                (GradientDrawable) getApplicationContext().getDrawable(R.drawable.background_rounding);
+                        img_view.setBackground(drawable);
+                        img_view.setClipToOutline(true);
+                    }
+
                     comment_view.setAdapter(comment_adapter);
                     comment_view.setScrollContainer(false);
                     likes_view.setText(Integer.toString(likes));
                 }
             }
+
 
             @Override
             public void onFailure(@NonNull Call<capsuledatas> call, @NonNull Throwable t) {

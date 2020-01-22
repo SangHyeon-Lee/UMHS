@@ -1,10 +1,14 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\umhscompany\\UMHS\\Madcamp_Project4\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-pl\\values-pl.xml",
+            "outputFile": "C:\\Users\\q\\UMHS\\Madcamp_Project4\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-pl\\values-pl.xml",
             "map": [
                 {
+<<<<<<< HEAD
+                    "source": "C:\\Users\\q\\.gradle\\caches\\transforms-2\\files-2.1\\0b8dc5f18d5f8cd9511e6c261cbc4b1b\\jetified-facebook-login-4.42.0\\res\\values-pl\\values-pl.xml",
+=======
                     "source": "C:\\Users\\q\\.gradle\\caches\\transforms-2\\files-2.1\\29b6186e6719a4df7a9a66693d7da951\\core-1.0.1\\res\\values-pl\\values-pl.xml",
+>>>>>>> 9bdfd3f3d7a4d27fa875230dc5f12ed8a43548be
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -21,7 +25,11 @@
                     }
                 },
                 {
+<<<<<<< HEAD
+                    "source": "C:\\Users\\q\\.gradle\\caches\\transforms-2\\files-2.1\\6bb34a103a69f96629110afa10d870cc\\jetified-play-services-basement-17.0.0\\res\\values-pl\\values.xml",
+=======
                     "source": "C:\\Users\\q\\.gradle\\caches\\transforms-2\\files-2.1\\84002cc20f5e9bd8a4d5db99f8dab20a\\jetified-play-services-basement-17.0.0\\res\\values-pl\\values.xml",
+>>>>>>> 9bdfd3f3d7a4d27fa875230dc5f12ed8a43548be
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",

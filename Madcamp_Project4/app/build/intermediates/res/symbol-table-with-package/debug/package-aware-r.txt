@@ -1113,6 +1113,7 @@ drawable abc_vector_test
 drawable annotation
 drawable avd_hide_password
 drawable avd_show_password
+drawable background_rounding
 drawable blue_dot
 drawable com_facebook_auth_dialog_background
 drawable com_facebook_auth_dialog_cancel_background
@@ -1299,6 +1300,7 @@ id container
 id content
 id contentPanel
 id coordinator
+id credit_scene
 id custom
 id customPanel
 id dark
@@ -1466,6 +1468,7 @@ id text2
 id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
+id textView3
 id text_input_password_toggle
 id textinput_counter
 id textinput_error
@@ -1603,8 +1606,11 @@ layout select_dialog_singlechoice_material
 layout support_simple_spinner_dropdown_item
 mipmap ic_launcher
 mipmap ic_launcher_round
-raw background
 raw background_logo
+<<<<<<< HEAD
+raw background_ultra
+raw credit_scene
+=======
 raw background_new
 raw bottle3
 raw bottle4
@@ -1628,6 +1634,7 @@ string __arcore_continue
 string __arcore_install_app
 string __arcore_install_feature
 string __arcore_installing
+>>>>>>> 9bdfd3f3d7a4d27fa875230dc5f12ed8a43548be
 string abc_action_bar_home_description
 string abc_action_bar_up_description
 string abc_action_menu_overflow_description

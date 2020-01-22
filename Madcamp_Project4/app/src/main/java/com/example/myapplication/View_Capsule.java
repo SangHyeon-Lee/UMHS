@@ -301,6 +301,7 @@ public class View_Capsule extends Fragment implements SensorEventListener, Locat
                 e.printStackTrace();
             }
 
+
             shouldConfigureSession = true;
         }
 
