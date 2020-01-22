@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
+import android.graphics.drawable.GradientDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -51,8 +52,16 @@ public class Comment_adapter extends BaseAdapter {
 
         comments comment = getItem(position);
         Glide.with(context).load(Uri.parse(comment.getProfile())).into(comment_profile);
-        comment_name.setText(comment.getUsername());
-        comment_text.setText(comment.getComment());
+        comment_name.setText(" "+comment.getUsername());
+        comment_text.setText(" "+comment.getComment());
+
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
+            GradientDrawable drawable=
+                    (GradientDrawable) context.getDrawable(R.drawable.background_rounding);
+            comment_profile.setBackground(drawable);
+            comment_profile.setClipToOutline(true);
+        }
+
         return convertView;
     }
 

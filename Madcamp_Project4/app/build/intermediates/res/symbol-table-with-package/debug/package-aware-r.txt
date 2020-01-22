@@ -1095,6 +1095,7 @@ drawable abc_textfield_search_material
 drawable abc_vector_test
 drawable avd_hide_password
 drawable avd_show_password
+drawable background_rounding
 drawable blue_dot
 drawable com_facebook_auth_dialog_background
 drawable com_facebook_auth_dialog_cancel_background
@@ -1275,6 +1276,7 @@ id container
 id content
 id contentPanel
 id coordinator
+id credit_scene
 id custom
 id customPanel
 id dark
@@ -1440,6 +1442,7 @@ id text2
 id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
+id textView3
 id text_input_password_toggle
 id textinput_counter
 id textinput_error
@@ -1576,6 +1579,7 @@ mipmap ic_launcher
 mipmap ic_launcher_round
 raw background_logo
 raw background_ultra
+raw credit_scene
 string abc_action_bar_home_description
 string abc_action_bar_up_description
 string abc_action_menu_overflow_description

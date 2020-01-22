@@ -1,9 +1,4 @@
-<<<<<<< HEAD
-#Tue Jan 21 16:05:41 KST 2020
+#Tue Jan 21 22:42:42 KST 2020
 base.0=C\:\\Users\\q\\UMHS\\Madcamp_Project4\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes.dex
-=======
-#Tue Jan 21 20:32:33 KST 2020
-base.0=C\:\\umhscompany\\UMHS\\Madcamp_Project4\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes.dex
->>>>>>> f19535b1bfbf6faab1eeb5e04874894c915ecc46
 path.0=classes.dex
 renamed.0=classes.dex

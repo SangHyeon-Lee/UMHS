@@ -16,6 +16,7 @@ import android.database.Observable;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
+import android.graphics.drawable.GradientDrawable;
 import android.media.ExifInterface;
 import android.net.Uri;
 import android.os.AsyncTask;
@@ -116,7 +117,12 @@ public class Add_Post extends AppCompatActivity {
         name_text.setText(name);
         Glide.with(this).load(profile).into(profile_view);
 
-
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
+            GradientDrawable drawable=
+                    (GradientDrawable) getApplicationContext().getDrawable(R.drawable.background_rounding);
+            profile_view.setBackground(drawable);
+            profile_view.setClipToOutline(true);
+        }
         //post버튼을 눌렀을때 실행되야 하는 놈. 수정해야할놈들있음.
         //TODO: 상현 여기 txt는 edittext firstUpload안에 Reg는 현재유저 이름으로 넣어줘용
         sendTakePhotoIntent();
@@ -203,6 +209,12 @@ public class Add_Post extends AppCompatActivity {
                 exifDegree = 0;
             }
             post_picture.setImageBitmap(rotate(bitmap, exifDegree));
+            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
+                GradientDrawable drawable=
+                        (GradientDrawable) getApplicationContext().getDrawable(R.drawable.background_rounding);
+                post_picture.setBackground(drawable);
+                post_picture.setClipToOutline(true);
+            }
         }
     }
 
