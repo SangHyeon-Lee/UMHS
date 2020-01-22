@@ -1437,7 +1437,6 @@ id shortcut
 id showCustom
 id showHome
 id showTitle
-id show_capsule
 id small
 id smallLabel
 id snackbar_action

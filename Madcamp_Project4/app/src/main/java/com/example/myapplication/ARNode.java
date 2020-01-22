@@ -17,6 +17,8 @@ import java.util.concurrent.ExecutionException;
 
 public class ARNode extends AnchorNode {
     private AugmentedImage image;
+    private final String capsuleid;
+
     public static CompletableFuture <ModelRenderable> modelRenderableCompletableFuture;
 
     public void setNode() {
@@ -47,8 +49,8 @@ public class ARNode extends AnchorNode {
 
     }
 
-    public ARNode (Context context, int modelId)
-    {
+    public ARNode (Context context, int modelId, String cid)
+    {this.capsuleid =cid;
         if (modelRenderableCompletableFuture == null) {
 
 
@@ -103,4 +105,5 @@ public class ARNode extends AnchorNode {
     public AugmentedImage getImage() {
         return image;
     }
+    public String getCapsuleid(){return capsuleid;}
 }

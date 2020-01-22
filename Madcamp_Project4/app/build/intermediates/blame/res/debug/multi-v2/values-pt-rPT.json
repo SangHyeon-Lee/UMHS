@@ -1,8 +1,25 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\q\\UHMS\\UMHS\\Madcamp_Project4\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-pt-rPT\\values-pt-rPT.xml",
+            "outputFile": "C:\\umhscompany\\UMHS\\Madcamp_Project4\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-pt-rPT\\values-pt-rPT.xml",
             "map": [
+                {
+                    "source": "C:\\Users\\q\\.gradle\\caches\\transforms-2\\files-2.1\\84002cc20f5e9bd8a4d5db99f8dab20a\\jetified-play-services-basement-17.0.0\\res\\values-pt-rPT\\values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "251",
+                        "endColumns": "203",
+                        "endOffsets": "454"
+                    },
+                    "to": {
+                        "startLines": "65",
+                        "startColumns": "4",
+                        "startOffsets": "7178",
+                        "endColumns": "203",
+                        "endOffsets": "7377"
+                    }
+                },
                 {
                     "source": "C:\\Users\\q\\.gradle\\caches\\transforms-2\\files-2.1\\0c077ff38c5290257f2a4de0ccebe547\\appcompat-1.0.2\\res\\values-pt-rPT\\values-pt-rPT.xml",
                     "from": {
@@ -38,20 +55,20 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\q\\.gradle\\caches\\transforms-2\\files-2.1\\ca255a9a13ac8cc2ec4564f9dfc340a8\\jetified-play-services-basement-17.0.0\\res\\values-pt-rPT\\values.xml",
+                    "source": "C:\\Users\\q\\.gradle\\caches\\transforms-2\\files-2.1\\3ed9af58dfb96b2b5e38168b988a1b18\\jetified-facebook-login-4.42.0\\res\\values-pt-rPT\\values-pt-rPT.xml",
                     "from": {
-                        "startLines": "4",
-                        "startColumns": "0",
-                        "startOffsets": "251",
-                        "endColumns": "203",
-                        "endOffsets": "454"
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,216,357,504,615,700,786,866,957,1054,1170,1287,1388,1489,1600,1728,1810,1896,2082,2176,2277,2392,2508",
+                        "endColumns": "160,140,146,110,84,85,79,90,96,115,116,100,100,110,127,81,85,185,93,100,114,115,147",
+                        "endOffsets": "211,352,499,610,695,781,861,952,1049,1165,1282,1383,1484,1595,1723,1805,1891,2077,2171,2272,2387,2503,2651"
                     },
                     "to": {
-                        "startLines": "65",
-                        "startColumns": "4",
-                        "startOffsets": "7178",
-                        "endColumns": "203",
-                        "endOffsets": "7377"
+                        "startLines": "34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "3388,3549,3690,3837,3948,4033,4119,4199,4290,4387,4503,4620,4721,4822,4933,5061,5143,5229,5415,5509,5610,5725,5841",
+                        "endColumns": "160,140,146,110,84,85,79,90,96,115,116,100,100,110,127,81,85,185,93,100,114,115,147",
+                        "endOffsets": "3544,3685,3832,3943,4028,4114,4194,4285,4382,4498,4615,4716,4817,4928,5056,5138,5224,5410,5504,5605,5720,5836,5984"
                     }
                 },
                 {
@@ -86,23 +103,6 @@
                         "startOffsets": "105,158,214,361,517",
                         "endColumns": "52,55,146,155,111",
                         "endOffsets": "153,209,356,512,624"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\q\\.gradle\\caches\\transforms-2\\files-2.1\\4df2891e9cd9d92fd129be7ca798b3fb\\jetified-facebook-login-4.42.0\\res\\values-pt-rPT\\values-pt-rPT.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,216,357,504,615,700,786,866,957,1054,1170,1287,1388,1489,1600,1728,1810,1896,2082,2176,2277,2392,2508",
-                        "endColumns": "160,140,146,110,84,85,79,90,96,115,116,100,100,110,127,81,85,185,93,100,114,115,147",
-                        "endOffsets": "211,352,499,610,695,781,861,952,1049,1165,1282,1383,1484,1595,1723,1805,1891,2077,2171,2272,2387,2503,2651"
-                    },
-                    "to": {
-                        "startLines": "34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "3388,3549,3690,3837,3948,4033,4119,4199,4290,4387,4503,4620,4721,4822,4933,5061,5143,5229,5415,5509,5610,5725,5841",
-                        "endColumns": "160,140,146,110,84,85,79,90,96,115,116,100,100,110,127,81,85,185,93,100,114,115,147",
-                        "endOffsets": "3544,3685,3832,3943,4028,4114,4194,4285,4382,4498,4615,4716,4817,4928,5056,5138,5224,5410,5504,5605,5720,5836,5984"
                     }
                 }
             ]

@@ -28,6 +28,7 @@ import android.location.LocationManager;
 import android.net.Uri;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.provider.MediaStore;
 
 import android.util.Log;
@@ -170,7 +171,7 @@ public class View_Capsule extends Fragment implements SensorEventListener, Locat
             @Nullable ViewGroup container,
             @Nullable Bundle savedInstanceState) {
         final View view = inflater.inflate(R.layout.activity_view_capsule, container, false);
-
+        loadAllCapsules();
         ImageButton button = view.findViewById(R.id.button_addpost);
 
 
@@ -178,9 +179,10 @@ public class View_Capsule extends Fragment implements SensorEventListener, Locat
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getContext(), Add_Post.class);
-                startActivity(intent);
+                startActivityForResult(intent, 1);
             }
         });
+
 
 
         //view
@@ -239,46 +241,12 @@ public class View_Capsule extends Fragment implements SensorEventListener, Locat
         mylat = gpsTracker.getLatitude();
         mylong = gpsTracker.getLongitude();
         myal = gpsTracker.getAltitude();
-        String address = getCurrentAddress(mylat, mylong);
-
-        //모든 캡슐들을  appcapsules라는 변수안에 집어넣음.
-        loadAllCapsules();
-
-        for (int j = 0; j< allcapsules.size(); j++){
-            double cap_lat = allcapsules.get(j).getLatitude();
-            double cap_long = allcapsules.get(j).getLongtitude();
-
-            double dis_x = Get_Distance(mylat, cap_long, mylat, mylong);
-            double dis_y = Get_Distance(cap_lat, mylong, mylat, mylong);
-            double dis = Get_Distance(cap_lat, cap_long, mylat, mylong);
-
-            if (dis>200){
-                continue;
-            }
-
-            if (sampleGPS[0]>mylat){
-                dis_y = -dis_y;
-            }
-            if (sampleGPS[1]<mylong){
-                dis_x = -dis_x;
-            }
-            dots.get(j).setVisibility(View.VISIBLE);
-            dots.get(j).setX( 138f + (float) dis_x*107/200);
-            dots.get(j).setY( 143f + (float) dis_y*107/200);
-        }
-        Button show = view.findViewById(R.id.show_capsule);
-        show.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                loadAllCapsules();
-                Intent intent2 = new Intent(getContext(), Posts_CardView.class);
-                intent2.putExtra("id", allcapsules.get(0).getCapsuleId());
-                startActivity(intent2);
-            }
-        });
-
 
         return view;
+    }
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data){
+        loadAllCapsules();
     }
 
     private void initSceneView() {
@@ -296,26 +264,23 @@ public class View_Capsule extends Fragment implements SensorEventListener, Locat
         if (locationScene == null) {
 
             locationScene = new LocationScene(getActivity(), arView);
+            for(int i = 0; i< allcapsules.size();i++){
+                ARNode node = new ARNode(getContext(), R.raw.bottle5, allcapsules.get(i).getCapsuleId());
+                node.setNode();
+                node.setOnTapListener((v, event) -> {
+                    Intent intent2 = new Intent(getContext(), Posts_CardView.class);
+                    intent2.putExtra("id", node.getCapsuleid());
+                    startActivity(intent2);
+                });
+                locationScene.mLocationMarkers.add(new LocationMarker(allcapsules.get(i).getLongtitude(), allcapsules.get(i).getLatitude(), node));
+                Log.i("location","added location 2222");
 
-            ARNode node = new ARNode(getContext(), R.raw.bottle5);
-            //node.setWorldScale(new Vector3(0.1f, 0.1f, 0.1f));
-            node.setNode();
-            node.setOnTapListener((v, event) -> {
-                Toast.makeText(getContext(), "capsule touched", Toast.LENGTH_LONG).show();
-            });
-
-
+            }
             // 특정 위치에 캡슐 달기
             //locationScene.mLocationMarkers.add(new LocationMarker(36.3740013, 127.3658097, node));
             //locationScene.mLocationMarkers.add(new LocationMarker(36.3740187, 127.3658176, node));
-            locationScene.mLocationMarkers.add(new LocationMarker(36.3740131, 127.365795, node));
-            Log.i("location","added location 2222");
-
-
-        }
-
-
-        if (locationScene != null) {
+        }else {
+//            updateCapsule();
             locationScene.processFrame(frame);
         }
 
@@ -442,6 +407,29 @@ public class View_Capsule extends Fragment implements SensorEventListener, Locat
 
     }
 
+    private void updateCapsule() {
+        Handler handler = new Handler();
+        int delay = 5000; //milliseconds
+
+        handler.postDelayed(new Runnable(){
+            public void run(){
+                for(int i = 0; i< allcapsules.size();i++){
+                    ARNode node = new ARNode(getContext(), R.raw.bottle5, allcapsules.get(i).getCapsuleId());
+                    node.setNode();
+                    node.setOnTapListener((v, event) -> {
+                        Intent intent2 = new Intent(getContext(), Posts_CardView.class);
+                        intent2.putExtra("id", node.getCapsuleid());
+                        startActivity(intent2);
+                    });
+                    locationScene.mLocationMarkers.add(new LocationMarker(allcapsules.get(i).getLongtitude(), allcapsules.get(i).getLatitude(), node));
+                    Log.i("location","added location 2222");
+
+                }
+                handler.postDelayed(this, delay);
+            }
+        }, delay);
+    }
+
 
 
     public String getCurrentAddress( double latitude, double longitude) {
@@ -496,6 +484,27 @@ public class View_Capsule extends Fragment implements SensorEventListener, Locat
                         allcapsules = body;
                         Toast.makeText(getApplicationContext(),
                                 "total length is "+allcapsules.size(), Toast.LENGTH_LONG).show();
+                        for (int j = 0; j< allcapsules.size(); j++){
+                            double cap_lat = allcapsules.get(j).getLatitude();
+                            double cap_long = allcapsules.get(j).getLongtitude();
+                            double dis_x = Get_Distance(mylat, cap_long, mylat, mylong);
+                            double dis_y = Get_Distance(cap_lat, mylong, mylat, mylong);
+                            double dis = Get_Distance(cap_lat, cap_long, mylat, mylong);
+
+                            if (dis>200){
+                                continue;
+                            }
+
+                            if (sampleGPS[0]>mylat){
+                                dis_y = -dis_y;
+                            }
+                            if (sampleGPS[1]<mylong){
+                                dis_x = -dis_x;
+                            }
+                            dots.get(j).setVisibility(View.VISIBLE);
+                            dots.get(j).setX( 138f + (float) dis_x*107/200);
+                            dots.get(j).setY( 143f + (float) dis_y*107/200);
+                        }
                     }
                 }
             }
@@ -503,6 +512,7 @@ public class View_Capsule extends Fragment implements SensorEventListener, Locat
             public void onFailure(@NonNull Call<List<capsulelocdatas>> call, @NonNull Throwable t) {
             }
         });
+
     }
 
 

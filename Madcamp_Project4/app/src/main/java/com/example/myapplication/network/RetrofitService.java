@@ -5,6 +5,7 @@ import android.provider.ContactsContract;
 import com.example.myapplication.dbmodels.capsuledatas;
 import com.example.myapplication.dbmodels.capsulelocdatas;
 import com.example.myapplication.dbmodels.mycapsules;
+import com.example.myapplication.dbmodels.postcomments;
 import com.example.myapplication.dbmodels.rescapdatas;
 import com.google.gson.JsonObject;
 
@@ -43,6 +44,9 @@ public interface RetrofitService {
     @POST("capsuledatas/view")
     Call<capsuledatas> getCaps(@Body capsulelocdatas param);
 
+    @POST("capsuledatas/comments")
+    Call<capsuledatas> postComment(@Body postcomments param);
+
     @GET("capsulelocdatas")
     Call<List<capsulelocdatas>> getCapsules();
 
@@ -58,6 +62,8 @@ public interface RetrofitService {
 
     @PUT
     Call<Void> updateImage(@Url String url, @Body RequestBody image);
+
+
 
     public static final Retrofit retrofit = new Retrofit.Builder()
             .baseUrl(RetrofitService.URL)
