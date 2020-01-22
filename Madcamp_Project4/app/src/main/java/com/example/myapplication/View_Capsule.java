@@ -176,16 +176,7 @@ public class View_Capsule extends Fragment implements SensorEventListener, Locat
             dots.get(j).setX( 138f + (float) dis_x*107/200);
             dots.get(j).setY( 143f + (float) dis_y*107/200);
         }
-        Button show = view.findViewById(R.id.show_capsule);
-        show.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                loadAllCapsules();
-                Intent intent2 = new Intent(getContext(), Posts_CardView.class);
-                intent2.putExtra("id", allcapsules.get(0).getCapsuleId());
-                startActivity(intent2);
-            }
-        });
+
 
 
         return view;
