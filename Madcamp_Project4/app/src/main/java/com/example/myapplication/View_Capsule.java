@@ -2,18 +2,22 @@ package com.example.myapplication;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+
 import androidx.core.app.ActivityCompat;
+
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
 import android.Manifest;
 import android.content.Context;
+
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
+
 import android.location.Address;
 import android.location.Geocoder;
 
@@ -24,9 +28,12 @@ import android.location.LocationManager;
 import android.net.Uri;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.provider.MediaStore;
+
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
@@ -34,6 +41,48 @@ import android.view.animation.RotateAnimation;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+
+import android.widget.Toast;
+
+
+
+import com.google.ar.core.ArCoreApk;
+import com.google.ar.core.AugmentedImage;
+import com.google.ar.core.AugmentedImageDatabase;
+import com.google.ar.core.Config;
+import com.google.ar.core.Frame;
+import com.google.ar.core.Session;
+import com.google.ar.core.TrackingState;
+import com.google.ar.core.exceptions.CameraNotAvailableException;
+import com.google.ar.core.exceptions.UnavailableApkTooOldException;
+import com.google.ar.core.exceptions.UnavailableArcoreNotInstalledException;
+import com.google.ar.core.exceptions.UnavailableDeviceNotCompatibleException;
+import com.google.ar.core.exceptions.UnavailableSdkTooOldException;
+import com.google.ar.core.exceptions.UnavailableUserDeclinedInstallationException;
+import com.google.ar.sceneform.ArSceneView;
+import com.google.ar.sceneform.FrameTime;
+import com.google.ar.sceneform.Scene;
+import com.google.ar.sceneform.math.Vector3;
+import com.karumi.dexter.Dexter;
+import com.karumi.dexter.PermissionToken;
+import com.karumi.dexter.listener.PermissionDeniedResponse;
+import com.karumi.dexter.listener.PermissionGrantedResponse;
+import com.karumi.dexter.listener.PermissionRequest;
+import com.karumi.dexter.listener.single.PermissionListener;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.ExecutionException;
+
+import javax.microedition.khronos.egl.EGLConfig;
+import javax.microedition.khronos.opengles.GL10;
+
+import uk.co.appoly.arcorelocation.LocationMarker;
+import uk.co.appoly.arcorelocation.LocationScene;
+
 import android.widget.TextView;
 import android.view.animation.Animation;
 import android.view.animation.RotateAnimation;
@@ -59,18 +108,27 @@ import com.google.firebase.auth.FirebaseUser;
 
 import org.w3c.dom.Text;
 
+
 import java.util.List;
 
 import static android.content.Context.LOCATION_SERVICE;
 import static android.content.Context.SENSOR_SERVICE;
+
+import static com.example.myapplication.ARNode.modelRenderableCompletableFuture;
 import static androidx.core.content.ContextCompat.checkSelfPermission;
 import static androidx.core.content.ContextCompat.getSystemService;
 import static com.facebook.FacebookSdk.getApplicationContext;
 
-public class View_Capsule extends Fragment implements SensorEventListener, LocationListener {
+public class View_Capsule extends Fragment implements SensorEventListener, LocationListener, Scene.OnUpdateListener {
 
+
+
+
+
+    //, ImageTrackerListener, ExternalRendering
     private ImageView compass;
     private SensorManager mSensorManager;
+
 
     List<capsulelocdatas> allcapsules = new ArrayList<capsulelocdatas>();
     private double mylat;
@@ -91,6 +149,12 @@ public class View_Capsule extends Fragment implements SensorEventListener, Locat
     private static final int REQUEST_CODE_LOCATION = 2;
 
 
+    private ArSceneView arView;
+    private LocationScene locationScene;
+    private Session session;
+    private boolean shouldConfigureSession = false;
+
+
     public static View_Capsule newInstance() {
         View_Capsule fragmentFirst = new View_Capsule();
         return fragmentFirst;
@@ -99,7 +163,6 @@ public class View_Capsule extends Fragment implements SensorEventListener, Locat
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
     }
 
     @Override
@@ -108,16 +171,44 @@ public class View_Capsule extends Fragment implements SensorEventListener, Locat
             @Nullable ViewGroup container,
             @Nullable Bundle savedInstanceState) {
         final View view = inflater.inflate(R.layout.activity_view_capsule, container, false);
-
+        loadAllCapsules();
         ImageButton button = view.findViewById(R.id.button_addpost);
+
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getContext(), Add_Post.class);
-                startActivity(intent);
+                startActivityForResult(intent, 1);
             }
         });
+
+
+
+        //view
+        arView = (ArSceneView) view.findViewById(R.id.arView);
+
+        //request permission
+        Dexter.withActivity(getActivity())
+                .withPermission(Manifest.permission.CAMERA)
+                .withListener(new PermissionListener() {
+                    @Override
+                    public void onPermissionGranted(PermissionGrantedResponse response) {
+                        setupSession();
+                    }
+
+                    @Override
+                    public void onPermissionDenied(PermissionDeniedResponse response) {
+
+                    }
+
+                    @Override
+                    public void onPermissionRationaleShouldBeShown(PermissionRequest permission, PermissionToken token) {
+
+                    }
+                }).check();
+
+        initSceneView();
 
         dots = new ArrayList<>();
         dots.add((ImageView) view.findViewById(R.id.dot0));
@@ -132,6 +223,7 @@ public class View_Capsule extends Fragment implements SensorEventListener, Locat
         dots.add((ImageView) view.findViewById(R.id.dot9));
 
         mSensorManager = (SensorManager) this.getContext().getSystemService(SENSOR_SERVICE);
+
         compass = (ImageView) view.findViewById(R.id.compass);
 
         locationManager = (LocationManager) getContext().getSystemService(Context.LOCATION_SERVICE);
@@ -149,44 +241,121 @@ public class View_Capsule extends Fragment implements SensorEventListener, Locat
         mylat = gpsTracker.getLatitude();
         mylong = gpsTracker.getLongitude();
         myal = gpsTracker.getAltitude();
-        String address = getCurrentAddress(mylat, mylong);
-
-        //모든 캡슐들을  appcapsules라는 변수안에 집어넣음.
-        loadAllCapsules();
-
-        for (int j = 0; j< allcapsules.size(); j++){
-            double cap_lat = allcapsules.get(j).getLatitude();
-            double cap_long = allcapsules.get(j).getLongtitude();
-
-            double dis_x = Get_Distance(mylat, cap_long, mylat, mylong);
-            double dis_y = Get_Distance(cap_lat, mylong, mylat, mylong);
-            double dis = Get_Distance(cap_lat, cap_long, mylat, mylong);
-
-            if (dis>200){
-                continue;
-            }
-
-            if (sampleGPS[0]>mylat){
-                dis_y = -dis_y;
-            }
-            if (sampleGPS[1]<mylong){
-                dis_x = -dis_x;
-            }
-            dots.get(j).setVisibility(View.VISIBLE);
-            dots.get(j).setX( 138f + (float) dis_x*107/200);
-            dots.get(j).setY( 143f + (float) dis_y*107/200);
-        }
-
-
 
         return view;
     }
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data){
+        loadAllCapsules();
+    }
 
+    private void initSceneView() {
+        arView.getScene().addOnUpdateListener(this);
+    }
+
+    @Override
+    public void onUpdate (FrameTime frameTime) {
+        Frame frame = arView.getArFrame();
+        Collection<AugmentedImage> updateAugmentedImg = frame.getUpdatedTrackables(AugmentedImage.class);
+
+
+        //node.setImage(image);
+
+        if (locationScene == null) {
+
+            locationScene = new LocationScene(getActivity(), arView);
+            for(int i = 0; i< allcapsules.size();i++){
+                ARNode node = new ARNode(getContext(), R.raw.bottle5, allcapsules.get(i).getCapsuleId());
+                node.setNode();
+                node.setOnTapListener((v, event) -> {
+                    Intent intent2 = new Intent(getContext(), Posts_CardView.class);
+                    intent2.putExtra("id", node.getCapsuleid());
+                    startActivity(intent2);
+                });
+                locationScene.mLocationMarkers.add(new LocationMarker(allcapsules.get(i).getLongtitude(), allcapsules.get(i).getLatitude(), node));
+                Log.i("location","added location 2222");
+
+            }
+            // 특정 위치에 캡슐 달기
+            //locationScene.mLocationMarkers.add(new LocationMarker(36.3740013, 127.3658097, node));
+            //locationScene.mLocationMarkers.add(new LocationMarker(36.3740187, 127.3658176, node));
+        }else {
+//            updateCapsule();
+            locationScene.processFrame(frame);
+        }
+
+
+    }
+
+    private void setupSession() {
+        if (session == null) {
+            try {
+                session = new Session (getContext());
+            } catch (UnavailableArcoreNotInstalledException e) {
+                e.printStackTrace();
+            } catch (UnavailableApkTooOldException e) {
+                e.printStackTrace();
+            } catch (UnavailableDeviceNotCompatibleException e) {
+                e.printStackTrace();
+            } catch (UnavailableSdkTooOldException e) {
+                e.printStackTrace();
+            }
+
+
+            shouldConfigureSession = true;
+        }
+
+        if (shouldConfigureSession) {
+            configSession();
+            shouldConfigureSession = false;
+            arView.setupSession(session);
+        }
+
+        try {
+            session.resume();
+            arView.resume();
+        } catch (CameraNotAvailableException e) {
+            e.printStackTrace();
+            session = null;
+        }
+    }
+
+    private void configSession() {
+        Config config = new Config(session);
+        config.setFocusMode(Config.FocusMode.AUTO);
+//        if (!buildDatabase(config)) {
+//            //
+//        }
+
+        config.setUpdateMode(Config.UpdateMode.LATEST_CAMERA_IMAGE);
+        session.configure(config);
+    }
 
 
     @Override
     public void onResume(){
         super.onResume();
+
+
+        Dexter.withActivity(getActivity())
+                .withPermission(Manifest.permission.CAMERA)
+                .withListener(new PermissionListener() {
+                    @Override
+                    public void onPermissionGranted(PermissionGrantedResponse response) {
+                        setupSession();
+                    }
+
+                    @Override
+                    public void onPermissionDenied(PermissionDeniedResponse response) {
+
+                    }
+
+                    @Override
+                    public void onPermissionRationaleShouldBeShown(PermissionRequest permission, PermissionToken token) {
+
+                    }
+                }).check();
+
         mSensorManager.registerListener(this, mSensorManager.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD), SensorManager.SENSOR_DELAY_GAME);
         mSensorManager.registerListener(this, mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER), SensorManager.SENSOR_DELAY_GAME);
 
@@ -238,6 +407,30 @@ public class View_Capsule extends Fragment implements SensorEventListener, Locat
     public void onAccuracyChanged(Sensor sensor, int accuracy) {
 
     }
+
+    private void updateCapsule() {
+        Handler handler = new Handler();
+        int delay = 5000; //milliseconds
+
+        handler.postDelayed(new Runnable(){
+            public void run(){
+                for(int i = 0; i< allcapsules.size();i++){
+                    ARNode node = new ARNode(getContext(), R.raw.bottle5, allcapsules.get(i).getCapsuleId());
+                    node.setNode();
+                    node.setOnTapListener((v, event) -> {
+                        Intent intent2 = new Intent(getContext(), Posts_CardView.class);
+                        intent2.putExtra("id", node.getCapsuleid());
+                        startActivity(intent2);
+                    });
+                    locationScene.mLocationMarkers.add(new LocationMarker(allcapsules.get(i).getLongtitude(), allcapsules.get(i).getLatitude(), node));
+                    Log.i("location","added location 2222");
+
+                }
+                handler.postDelayed(this, delay);
+            }
+        }, delay);
+    }
+
 
 
     public String getCurrentAddress( double latitude, double longitude) {
@@ -292,6 +485,27 @@ public class View_Capsule extends Fragment implements SensorEventListener, Locat
                         allcapsules = body;
                         Toast.makeText(getApplicationContext(),
                                 "total length is "+allcapsules.size(), Toast.LENGTH_LONG).show();
+                        for (int j = 0; j< allcapsules.size(); j++){
+                            double cap_lat = allcapsules.get(j).getLatitude();
+                            double cap_long = allcapsules.get(j).getLongtitude();
+                            double dis_x = Get_Distance(mylat, cap_long, mylat, mylong);
+                            double dis_y = Get_Distance(cap_lat, mylong, mylat, mylong);
+                            double dis = Get_Distance(cap_lat, cap_long, mylat, mylong);
+
+                            if (dis>200){
+                                continue;
+                            }
+
+                            if (sampleGPS[0]>mylat){
+                                dis_y = -dis_y;
+                            }
+                            if (sampleGPS[1]<mylong){
+                                dis_x = -dis_x;
+                            }
+                            dots.get(j).setVisibility(View.VISIBLE);
+                            dots.get(j).setX( 138f + (float) dis_x*107/200);
+                            dots.get(j).setY( 143f + (float) dis_y*107/200);
+                        }
                     }
                 }
             }
@@ -299,6 +513,7 @@ public class View_Capsule extends Fragment implements SensorEventListener, Locat
             public void onFailure(@NonNull Call<List<capsulelocdatas>> call, @NonNull Throwable t) {
             }
         });
+
     }
 
 
@@ -361,7 +576,4 @@ public class View_Capsule extends Fragment implements SensorEventListener, Locat
     public void onProviderDisabled(String provider) {
 
     }
-
-
-
 }

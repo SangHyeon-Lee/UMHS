@@ -25,8 +25,13 @@ import com.bumptech.glide.Glide;
 import com.example.myapplication.dbmodels.capsuledatas;
 import com.example.myapplication.dbmodels.capsulelocdatas;
 import com.example.myapplication.dbmodels.comments;
+import com.example.myapplication.dbmodels.postcomments;
+import com.example.myapplication.dbmodels.rescapdatas;
 import com.example.myapplication.network.RetrofitService;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
+import java.io.File;
 import java.util.List;
 
 import retrofit2.Call;
@@ -60,6 +65,9 @@ public class Posts_CardView extends AppCompatActivity {
         comment_view = findViewById(R.id.comment);
         likes_view = findViewById(R.id.like_text);
         like = findViewById(R.id.like_button);
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        final String name = user.getDisplayName();
+        Uri profile = user.getPhotoUrl();
 
 
         Intent intent = getIntent();
@@ -75,8 +83,9 @@ public class Posts_CardView extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (edit_comment.getText().toString().length() != 0) {
-
-
+                    postComment(id,edit_comment.getText().toString(),name,profile.toString());
+                    getCaps(id);
+                    edit_comment.setText("");
                 }
             }
         });
@@ -128,10 +137,37 @@ public class Posts_CardView extends AppCompatActivity {
                     }
 
                     comment_view.setAdapter(comment_adapter);
+                    comment_view.setScrollContainer(false);
                     likes_view.setText(Integer.toString(likes));
                 }
             }
 
+
+            @Override
+            public void onFailure(@NonNull Call<capsuledatas> call, @NonNull Throwable t) {
+            }
+        });
+    }
+
+    public void postComment(String Cid, String txt, String name, String prof) {
+        final String goname = name;
+        final String v1 = txt;
+        final String v2 = prof;
+        final int v3 = 0;
+        comments onet = new comments(name,txt,prof);
+        //Capsule post시 서버에 올라가고, Capsuleid를 받아옴.
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(RetrofitService.URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+        RetrofitService retrofitExService = retrofit.create(RetrofitService.class);
+        retrofitExService.postComment(new postcomments(goname,v1,Cid,onet,v3,v2)).enqueue(new Callback<capsuledatas>() {
+            @Override
+            public void onResponse(@NonNull Call<capsuledatas> call, @NonNull Response<capsuledatas> response) {
+                if (response.isSuccessful()) {
+                    capsuledatas body = response.body();
+                }
+            }
 
             @Override
             public void onFailure(@NonNull Call<capsuledatas> call, @NonNull Throwable t) {
